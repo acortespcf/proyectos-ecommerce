@@ -33,10 +33,11 @@ feat/chile-[ISSUE-NUMBER]-<descripcion-en-kebab-case>
 ## 📌 Scope
 <!-- Selecciona el área afectada -->
 - [ ] seo
-- [ ] gmb
-- [ ] modyo
-- [ ] analytics
-- [ ] integraciones
+- [ ] ux
+- [ ] checkout
+- [ ] pdp
+- [ ] plp
+- [ ] home
 - [ ] otro
 
 ## ⚡ Consideraciones
