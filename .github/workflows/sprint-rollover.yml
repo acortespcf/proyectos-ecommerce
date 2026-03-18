@@ -1,0 +1,246 @@
+name: Sprint Rollover - Mover issues no finalizadas al siguiente sprint
+
+on:
+  schedule:
+    - cron: '0 12 * * *'  # Se ejecuta diariamente a las 12:00 UTC
+  workflow_dispatch:       # Permite ejecución manual desde GitHub Actions
+
+jobs:
+  sprint-rollover:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Mover items no finalizados al siguiente sprint
+        uses: actions/github-script@v7
+        with:
+          github-token: ${{ secrets.PROJECT_TOKEN }}
+          script: |
+            const OWNER = 'acortespcf';
+            const PROJECT_NUMBER = 3;
+            const SPRINT_FIELD_NAME = 'Sprint';
+            const STATUS_FIELD_NAME = 'Status';
+
+            // Nombres de status que se consideran "finalizados" (no se mueven)
+            // Ajusta esta lista según los status de tu proyecto
+            const DONE_STATUSES = ['Done', 'Closed', 'Cancelled'];
+
+            // ─── 1. Obtener metadata del proyecto (campos e iteraciones) ───────────
+            const projectData = await github.graphql(`
+              query($owner: String!, $number: Int!) {
+                user(login: $owner) {
+                  projectV2(number: $number) {
+                    id
+                    fields(first: 50) {
+                      nodes {
+                        __typename
+                        ... on ProjectV2IterationField {
+                          id
+                          name
+                          configuration {
+                            iterations {
+                              id
+                              title
+                              startDate
+                              duration
+                            }
+                            completedIterations {
+                              id
+                              title
+                              startDate
+                              duration
+                            }
+                          }
+                        }
+                        ... on ProjectV2SingleSelectField {
+                          id
+                          name
+                          options {
+                            id
+                            name
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            `, { owner: OWNER, number: PROJECT_NUMBER });
+
+            const project = projectData.user.projectV2;
+            const projectId = project.id;
+
+            // Buscar el campo Sprint (tipo Iteration)
+            const sprintField = project.fields.nodes.find(
+              f => f.__typename === 'ProjectV2IterationField' && f.name === SPRINT_FIELD_NAME
+            );
+            if (!sprintField) throw new Error(`Campo "${SPRINT_FIELD_NAME}" no encontrado en el proyecto`);
+
+            // Buscar el campo Status
+            const statusField = project.fields.nodes.find(
+              f => f.__typename === 'ProjectV2SingleSelectField' && f.name === STATUS_FIELD_NAME
+            );
+
+            // IDs de opciones de status que se consideran "done"
+            const doneOptionIds = statusField
+              ? statusField.options
+                  .filter(o => DONE_STATUSES.some(d => o.name.toLowerCase() === d.toLowerCase()))
+                  .map(o => o.id)
+              : [];
+
+            // Iteraciones completadas (sprint que ya terminaron según GitHub)
+            const completedIterationIds = sprintField.configuration.completedIterations.map(i => i.id);
+
+            if (completedIterationIds.length === 0) {
+              console.log('No hay sprints completados aún. Nada que hacer.');
+              return;
+            }
+
+            // Siguiente iteración activa (la primera por fecha de inicio)
+            const nextIteration = sprintField.configuration.iterations
+              .sort((a, b) => new Date(a.startDate) - new Date(b.startDate))[0];
+
+            if (!nextIteration) {
+              console.log('No hay un sprint siguiente planificado. Nada que hacer.');
+              return;
+            }
+
+            console.log(`Sprints completados a procesar: ${sprintField.configuration.completedIterations.map(i => i.title).join(', ')}`);
+            console.log(`Sprint destino: ${nextIteration.title} (${nextIteration.startDate})`);
+
+            // ─── 2. Obtener todos los items del proyecto (con paginación) ──────────
+            let allItems = [];
+            let cursor = null;
+            let hasNextPage = true;
+
+            while (hasNextPage) {
+              const itemsData = await github.graphql(`
+                query($projectId: ID!, $cursor: String) {
+                  node(id: $projectId) {
+                    ... on ProjectV2 {
+                      items(first: 100, after: $cursor) {
+                        pageInfo {
+                          hasNextPage
+                          endCursor
+                        }
+                        nodes {
+                          id
+                          content {
+                            __typename
+                            ... on Issue {
+                              number
+                              title
+                              state
+                            }
+                            ... on PullRequest {
+                              number
+                              title
+                              state
+                            }
+                          }
+                          fieldValues(first: 20) {
+                            nodes {
+                              __typename
+                              ... on ProjectV2ItemFieldIterationValue {
+                                field {
+                                  ... on ProjectV2IterationField {
+                                    name
+                                  }
+                                }
+                                iterationId
+                                title
+                              }
+                              ... on ProjectV2ItemFieldSingleSelectValue {
+                                field {
+                                  ... on ProjectV2SingleSelectField {
+                                    name
+                                  }
+                                }
+                                optionId
+                                name
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              `, { projectId, cursor });
+
+              const page = itemsData.node.items;
+              allItems = allItems.concat(page.nodes);
+              hasNextPage = page.pageInfo.hasNextPage;
+              cursor = page.pageInfo.endCursor;
+            }
+
+            console.log(`Total de items en el proyecto: ${allItems.length}`);
+
+            // ─── 3. Filtrar items que deben moverse ───────────────────────────────
+            const itemsToMove = allItems.filter(item => {
+              const sprintValue = item.fieldValues.nodes.find(
+                fv => fv.__typename === 'ProjectV2ItemFieldIterationValue' &&
+                      fv.field?.name === SPRINT_FIELD_NAME
+              );
+
+              // Solo procesar items que estén en un sprint completado
+              if (!sprintValue || !completedIterationIds.includes(sprintValue.iterationId)) {
+                return false;
+              }
+
+              // Ignorar si el sprint ya es el destino (evitar loops)
+              if (sprintValue.iterationId === nextIteration.id) {
+                return false;
+              }
+
+              // Ignorar issues/PRs cerrados o mergeados
+              const state = item.content?.state;
+              if (state === 'CLOSED' || state === 'MERGED') {
+                return false;
+              }
+
+              // Ignorar items con status "done"
+              const statusValue = item.fieldValues.nodes.find(
+                fv => fv.__typename === 'ProjectV2ItemFieldSingleSelectValue' &&
+                      fv.field?.name === STATUS_FIELD_NAME
+              );
+              if (statusValue && doneOptionIds.includes(statusValue.optionId)) {
+                return false;
+              }
+
+              return true;
+            });
+
+            console.log(`Items a mover a "${nextIteration.title}": ${itemsToMove.length}`);
+
+            if (itemsToMove.length === 0) {
+              console.log('No hay items pendientes para mover.');
+              return;
+            }
+
+            // ─── 4. Mover cada item al siguiente sprint ───────────────────────────
+            for (const item of itemsToMove) {
+              const label = item.content?.title
+                ? `#${item.content.number} - ${item.content.title}`
+                : item.id;
+
+              await github.graphql(`
+                mutation($projectId: ID!, $itemId: ID!, $fieldId: ID!, $iterationId: String!) {
+                  updateProjectV2ItemFieldValue(input: {
+                    projectId: $projectId
+                    itemId: $itemId
+                    fieldId: $fieldId
+                    value: { iterationId: $iterationId }
+                  }) {
+                    projectV2Item { id }
+                  }
+                }
+              `, {
+                projectId,
+                itemId: item.id,
+                fieldId: sprintField.id,
+                iterationId: nextIteration.id
+              });
+
+              console.log(`✓ Movido: ${label} → ${nextIteration.title}`);
+            }
+
+            console.log(`\n✅ Completado: ${itemsToMove.length} item(s) movidos a "${nextIteration.title}"`);
