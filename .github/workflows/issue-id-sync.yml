@@ -1,0 +1,175 @@
+name: Sync Issue ID field in Project
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '15 * * * *'
+  issues:
+    types: [opened, reopened]
+  projects_v2_item:
+    types: [created, edited, reopened, restored]
+
+jobs:
+  sync-issue-id:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Sincronizar campo Issue ID con numero de issue
+        uses: actions/github-script@v7
+        with:
+          github-token: ${{ secrets.PROJECT_TOKEN }}
+          script: |
+            const OWNER = 'acortespcf';
+            const PROJECT_NUMBER = 3;
+            const ISSUE_ID_FIELD_NAME = 'Issue ID';
+
+            const eventName = context.eventName;
+            const issueNumberFromEvent = context.payload?.issue?.number;
+
+            const projectData = await github.graphql(`
+              query($owner: String!, $number: Int!) {
+                user(login: $owner) {
+                  projectV2(number: $number) {
+                    id
+                    fields(first: 50) {
+                      nodes {
+                        __typename
+                        ... on ProjectV2Field {
+                          id
+                          name
+                          dataType
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            `, { owner: OWNER, number: PROJECT_NUMBER });
+
+            const project = projectData.user?.projectV2;
+            if (!project) {
+              throw new Error(`No se encontro el Project #${PROJECT_NUMBER} para ${OWNER}`);
+            }
+
+            const issueIdField = project.fields.nodes.find(
+              field => field.__typename === 'ProjectV2Field' &&
+                       field.name === ISSUE_ID_FIELD_NAME &&
+                       field.dataType === 'NUMBER'
+            );
+
+            if (!issueIdField) {
+              throw new Error(`Campo numerico "${ISSUE_ID_FIELD_NAME}" no encontrado en el proyecto`);
+            }
+
+            const projectId = project.id;
+
+            let allItems = [];
+            let cursor = null;
+            let hasNextPage = true;
+
+            while (hasNextPage) {
+              const itemsData = await github.graphql(`
+                query($projectId: ID!, $cursor: String) {
+                  node(id: $projectId) {
+                    ... on ProjectV2 {
+                      items(first: 100, after: $cursor) {
+                        pageInfo {
+                          hasNextPage
+                          endCursor
+                        }
+                        nodes {
+                          id
+                          content {
+                            __typename
+                            ... on Issue {
+                              id
+                              number
+                              title
+                              state
+                            }
+                          }
+                          fieldValues(first: 50) {
+                            nodes {
+                              __typename
+                              ... on ProjectV2ItemFieldNumberValue {
+                                field {
+                                  ... on ProjectV2Field {
+                                    id
+                                    name
+                                  }
+                                }
+                                number
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              `, { projectId, cursor });
+
+              const page = itemsData.node.items;
+              allItems = allItems.concat(page.nodes);
+              hasNextPage = page.pageInfo.hasNextPage;
+              cursor = page.pageInfo.endCursor;
+            }
+
+            const issueItems = allItems.filter(item => item.content?.__typename === 'Issue');
+
+            const targetItems = issueNumberFromEvent
+              ? issueItems.filter(item => item.content.number === issueNumberFromEvent)
+              : issueItems;
+
+            if (targetItems.length === 0) {
+              if (issueNumberFromEvent) {
+                console.log(`Issue #${issueNumberFromEvent} aun no esta en el Project. Se actualizara en la siguiente corrida programada.`);
+                return;
+              }
+
+              console.log('No hay issues en el Project para procesar.');
+              return;
+            }
+
+            let updated = 0;
+            let unchanged = 0;
+
+            for (const item of targetItems) {
+              const issueNumber = item.content.number;
+              const currentIssueIdValue = item.fieldValues.nodes.find(
+                fv => fv.__typename === 'ProjectV2ItemFieldNumberValue' &&
+                      fv.field?.name === ISSUE_ID_FIELD_NAME
+              )?.number;
+
+              if (Number(currentIssueIdValue) === Number(issueNumber)) {
+                unchanged += 1;
+                continue;
+              }
+
+              await github.graphql(`
+                mutation($projectId: ID!, $itemId: ID!, $fieldId: ID!, $number: Float!) {
+                  updateProjectV2ItemFieldValue(input: {
+                    projectId: $projectId
+                    itemId: $itemId
+                    fieldId: $fieldId
+                    value: { number: $number }
+                  }) {
+                    projectV2Item {
+                      id
+                    }
+                  }
+                }
+              `, {
+                projectId,
+                itemId: item.id,
+                fieldId: issueIdField.id,
+                number: Number(issueNumber)
+              });
+
+              updated += 1;
+              console.log(`Actualizado Issue ID: #${issueNumber} (${item.content.title}) -> ${issueNumber}`);
+            }
+
+            console.log(`Evento: ${eventName}`);
+            console.log(`Items evaluados: ${targetItems.length}`);
+            console.log(`Actualizados: ${updated}`);
+            console.log(`Sin cambios: ${unchanged}`);
