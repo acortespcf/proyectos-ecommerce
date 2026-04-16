@@ -6,8 +6,6 @@ on:
     - cron: '15 * * * *'
   issues:
     types: [opened, reopened]
-  projects_v2_item:
-    types: [created, edited, reopened, restored]
 
 jobs:
   sync-issue-id:
