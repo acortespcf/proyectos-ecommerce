@@ -63,9 +63,56 @@ jobs:
                   }
                 }
               }
-            `, { owner: OWNER, number: PROJECT_NUMBER });
+            `, { owner: OWNER, number: PROJECT_NUMBER }).catch(async err => {
+              // Si falla con user query, intentar con organization
+              if (err.message.includes('404')) {
+                console.log('Intentando acceder como organización...');
+                return await github.graphql(`
+                  query($owner: String!, $number: Int!) {
+                    organization(login: $owner) {
+                      projectV2(number: $number) {
+                        id
+                        fields(first: 50) {
+                          nodes {
+                            __typename
+                            ... on ProjectV2IterationField {
+                              id
+                              name
+                              configuration {
+                                iterations {
+                                  id
+                                  title
+                                  startDate
+                                  duration
+                                }
+                                completedIterations {
+                                  id
+                                  title
+                                  startDate
+                                  duration
+                                }
+                              }
+                            }
+                            ... on ProjectV2SingleSelectField {
+                              id
+                              name
+                              options {
+                                id
+                                name
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                `, { owner: OWNER, number: PROJECT_NUMBER });
+              }
+              throw err;
+            });
 
-            const project = projectData.user.projectV2;
+            const project = projectData.user?.projectV2 || projectData.organization?.projectV2;
+            if (!project) throw new Error('No se pudo acceder al proyecto');
             const projectId = project.id;
 
             // Buscar el campo Sprint (tipo Iteration)

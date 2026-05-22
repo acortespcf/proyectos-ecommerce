@@ -12,7 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Sincronizar campo Issue ID con numero de issue
-        uses: actions/github-script@v7
+        uses: actions/github-script@v8
         with:
           github-token: ${{ secrets.PROJECT_TOKEN }}
           script: |
@@ -25,16 +25,34 @@ jobs:
 
             const projectData = await github.graphql(`
               query($owner: String!, $number: Int!) {
-                user(login: $owner) {
-                  projectV2(number: $number) {
-                    id
-                    fields(first: 50) {
-                      nodes {
-                        __typename
-                        ... on ProjectV2Field {
-                          id
-                          name
-                          dataType
+                repositoryOwner(login: $owner) {
+                  __typename
+                  ... on User {
+                    projectV2(number: $number) {
+                      id
+                      fields(first: 50) {
+                        nodes {
+                          __typename
+                          ... on ProjectV2Field {
+                            id
+                            name
+                            dataType
+                          }
+                        }
+                      }
+                    }
+                  }
+                  ... on Organization {
+                    projectV2(number: $number) {
+                      id
+                      fields(first: 50) {
+                        nodes {
+                          __typename
+                          ... on ProjectV2Field {
+                            id
+                            name
+                            dataType
+                          }
                         }
                       }
                     }
@@ -43,7 +61,7 @@ jobs:
               }
             `, { owner: OWNER, number: PROJECT_NUMBER });
 
-            const project = projectData.user?.projectV2;
+            const project = projectData.repositoryOwner?.projectV2;
             if (!project) {
               throw new Error(`No se encontro el Project #${PROJECT_NUMBER} para ${OWNER}`);
             }
