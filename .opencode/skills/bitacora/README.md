@@ -3,6 +3,7 @@
 ## Ejemplo completo
 ```txt
 fecha: 22-05-2026
+responsable: Seba
 contexto: ajustes PDP y campanas activas
 
 desarrollo:
@@ -20,6 +21,8 @@ pendientes:
 bloqueos:
 - Sin bloqueos
 ```
+
+El skill crea la bitacora en `bitacora/<mes>/DD-MM-AAAA-<responsable>.md` (ejemplo: `bitacora/mayo/25-05-2026-seba.md`) y mantiene intacta la estructura del markdown base.
 
 ## Ejemplo con dato faltante
 Entrada:

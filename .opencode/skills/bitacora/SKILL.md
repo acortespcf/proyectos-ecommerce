@@ -1,6 +1,6 @@
 ---
 name: bitacora
-description: Genera y completa bitacoras diarias en `bitacora/DD-MM-AAAA.md` usando `bitacora/TEMPLATE.md`. Si falta informacion obligatoria, pregunta solo lo minimo necesario antes de crear el archivo.
+description: Genera y completa bitacoras diarias en `bitacora/<mes>/DD-MM-AAAA-<responsable>.md` usando `bitacora/TEMPLATE.md`. Si falta informacion obligatoria, pregunta solo lo minimo necesario antes de crear el archivo.
 ---
 
 # Skill: Bitacora Diaria
@@ -10,11 +10,12 @@ Completar una bitacora diaria a partir de un listado rapido del usuario, manteni
 
 ## Archivos de trabajo
 - Template fuente: `bitacora/TEMPLATE.md`
-- Salida: `bitacora/DD-MM-AAAA.md`
+- Salida: `bitacora/<mes>/DD-MM-AAAA-<responsable>.md`
 
 ## Entrada esperada (preferida)
 ```txt
 fecha: DD-MM-AAAA
+responsable: Nombre (opcional, default: Seba)
 contexto: (opcional)
 
 desarrollo:
@@ -47,6 +48,8 @@ bloqueos:
 5. Si no hay `bloqueos`, usar `Sin bloqueos`.
 6. `referencias` es opcional; si no existe, usar `No aplica`.
 7. Mantener redaccion en bullets, clara y breve.
+8. No modificar la estructura del markdown base para separar por persona; la separacion se hace en el nombre del archivo.
+9. Si no se informa `responsable`, usar `Seba` por defecto para el nombre del archivo.
 
 ## Comportamiento cuando falta informacion
 Preguntar solo lo minimo para desbloquear la creacion:
@@ -65,7 +68,7 @@ Haz una sola pregunta a la vez y continua al recibir respuesta.
    - Marcar con `[X]` categorias activas en resumen.
    - Copiar actividades en su seccion de detalle.
    - Añadir referencias en `Desarrollo` cuando existan.
-5. Crear archivo `bitacora/DD-MM-AAAA.md`.
+5. Crear archivo `bitacora/<mes>/DD-MM-AAAA-<responsable>.md` (ejemplo: `bitacora/mayo/25-05-2026-seba.md`).
 6. Confirmar ruta creada y resumir lo cargado.
 
 ## Plantilla de pregunta de aclaracion
@@ -76,4 +79,5 @@ Haz una sola pregunta a la vez y continua al recibir respuesta.
 La respuesta final debe incluir:
 - Ruta del archivo creado.
 - Categorias activadas.
+- Responsable usado en la bitacora.
 - Campos autocompletados por defecto (`Sin reuniones`, `Sin bloqueos`, `No aplica`) si fueron usados.
