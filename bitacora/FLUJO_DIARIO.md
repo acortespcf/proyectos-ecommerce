@@ -8,6 +8,11 @@ Registrar avances pequenos durante el dia y consolidarlos al cierre en una bitac
 - Captura rapida del dia: `bitacora/inbox/ain/<AAAA-MM-DD>.md`
 - Plantilla base: `bitacora/TEMPLATE.md`
 
+## Regla de generacion final
+- El archivo final del dia siempre debe generarse usando la estructura de `bitacora/TEMPLATE.md`.
+- El inbox diario sirve como fuente de insumos, pero no define el formato final.
+- Si durante el tiempo cambia `bitacora/TEMPLATE.md`, las nuevas bitacoras deben respetar la version vigente del template al momento de generarse.
+
 ## Flujo propuesto
 1. Durante el dia, cada vez que avances en algo, me escribes una nota corta.
 2. Yo agrego esa nota al archivo `bitacora/inbox/ain/<fecha>.md`.
@@ -17,7 +22,7 @@ Registrar avances pequenos durante el dia y consolidarlos al cierre en una bitac
    `issues creadas/actualizadas hoy`, `repos tocados`, `archivos relevantes modificados`.
 5. Al final del dia, me pides:
    `genera la bitacora final de hoy`
-6. Yo consolido el contenido del inbox en el archivo final mensual, con resumen por categoria, detalle, pendientes y alertas.
+6. Yo consolido el contenido del inbox en el archivo final mensual usando `bitacora/TEMPLATE.md`, con resumen por categoria, detalle, pendientes y alertas.
 
 ## Formato recomendado para capturas rapidas
 Usa cualquiera de estas formas:
