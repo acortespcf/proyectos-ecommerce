@@ -1,28 +1,28 @@
 # Flujo Diario de Bitacora
 
 ## Objetivo
-Registrar avances pequenos durante el dia y consolidarlos al cierre en una bitacora diaria lista para versionar.
+Registrar avances pequenos durante el dia en un archivo diario por persona, creado desde template si no existe y actualizado durante toda la jornada.
 
 ## Estructura
-- Bitacora final diaria: `bitacora/<mes>/<DD-MM-AAAA>-ain.md`
-- Captura rapida del dia: `bitacora/inbox/ain/<AAAA-MM-DD>.md`
+- Inbox diario por persona: `bitacora/inbox/<responsable>/<mes>/DD-MM-AAAA.md`
 - Plantilla base: `bitacora/TEMPLATE.md`
 
-## Regla de generacion final
-- El archivo final del dia siempre debe generarse usando la estructura de `bitacora/TEMPLATE.md`.
-- El inbox diario sirve como fuente de insumos, pero no define el formato final.
-- Si durante el tiempo cambia `bitacora/TEMPLATE.md`, las nuevas bitacoras deben respetar la version vigente del template al momento de generarse.
+## Regla de creacion y actualizacion
+- El archivo del dia siempre debe crearse usando la estructura de `bitacora/TEMPLATE.md`.
+- Si el archivo del dia ya existe, las nuevas entradas deben agregarse sobre ese mismo archivo.
+- Si durante el tiempo cambia `bitacora/TEMPLATE.md`, solo aplica al crear nuevos archivos; no se debe rearmar automaticamente un archivo ya iniciado.
 
 ## Flujo propuesto
 1. Durante el dia, cada vez que avances en algo, me escribes una nota corta.
-2. Yo agrego esa nota al archivo `bitacora/inbox/ain/<fecha>.md`.
-3. La nota puede venir en lenguaje natural, por ejemplo:
+2. Yo resuelvo el responsable y el archivo del dia en `bitacora/inbox/<responsable>/<mes>/DD-MM-AAAA.md`.
+3. Si el archivo no existe, lo creo con base en `bitacora/TEMPLATE.md`.
+4. Si el archivo ya existe, agrego la nota en las secciones correspondientes.
+5. La nota puede venir en lenguaje natural, por ejemplo:
    `agrega a bitacora: revise GSC para URLs excluidas y cruce redirects para futura issue`
-4. Si trabajas en GitHub, tambien puedo complementar con:
+6. Si trabajas en GitHub, tambien puedo complementar con:
    `issues creadas/actualizadas hoy`, `repos tocados`, `archivos relevantes modificados`.
-5. Al final del dia, me pides:
-   `genera la bitacora final de hoy`
-6. Yo consolido el contenido del inbox en el archivo final mensual usando `bitacora/TEMPLATE.md`, con resumen por categoria, detalle, pendientes y alertas.
+7. Durante el mismo dia sigo actualizando ese mismo archivo cada vez que me digas `agrega a bitacora: ...`.
+8. Al cierre, el archivo ya queda como bitacora diaria del dia, sin necesidad de una consolidacion adicional.
 
 ## Formato recomendado para capturas rapidas
 Usa cualquiera de estas formas:
@@ -38,12 +38,16 @@ Usa cualquiera de estas formas:
 - `agrega a bitacora: ...`
 - `muestrame mi inbox de hoy`
 - `resume lo que llevo hoy`
-- `genera la bitacora final de hoy`
+- `actualiza mi bitacora de hoy`
 
-## Criterio de consolidacion al cierre
+## Criterio de registro
 - Desarrollo: issues, investigacion, cambios tecnicos, documentacion, automatizaciones.
 - Campanas: cargas, ajustes visuales, contenidos, banners, vitrinas, Cyber, SPPH, etc.
 - Reuniones / Gestion: reuniones, acuerdos, coordinaciones, seguimiento.
 
+## Ejemplos de rutas
+- `bitacora/inbox/ain/junio/03-06-2026.md`
+- `bitacora/inbox/seba/junio/03-06-2026.md`
+
 ## Nota practica
-Si un trabajo no deja rastro en Git, igual lo podemos registrar desde tus notas del dia o desde actividad en GitHub para no perderlo en la bitacora final.
+Si un trabajo no deja rastro en Git, igual lo podemos registrar desde tus notas del dia o desde actividad en GitHub para no perderlo en la bitacora diaria.

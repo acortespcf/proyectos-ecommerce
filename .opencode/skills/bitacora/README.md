@@ -22,7 +22,9 @@ bloqueos:
 - Sin bloqueos
 ```
 
-El skill crea la bitacora en `bitacora/<mes>/DD-MM-AAAA-<responsable>.md` (ejemplo: `bitacora/mayo/25-05-2026-seba.md`) y mantiene intacta la estructura del markdown base.
+El skill crea o actualiza la bitacora en `bitacora/inbox/<responsable>/<mes>/DD-MM-AAAA.md` (ejemplo: `bitacora/inbox/seba/mayo/22-05-2026.md`) y usa `bitacora/TEMPLATE.md` como base cuando el archivo del dia no existe.
+
+Si el archivo ya existe, agrega la nueva informacion en las secciones correspondientes sin recrear el documento completo.
 
 ## Ejemplo con dato faltante
 Entrada:
@@ -33,3 +35,9 @@ desarrollo:
 
 Respuesta esperada del skill:
 `Me falta solo la fecha para crear la bitacora. Que fecha quieres usar (DD-MM-AAAA)?`
+
+## Estructura esperada
+- `bitacora/inbox/ain/<mes>/DD-MM-AAAA.md`
+- `bitacora/inbox/seba/<mes>/DD-MM-AAAA.md`
+
+Asi cada persona mantiene su propio inbox diario y trabaja siempre sobre el mismo archivo del dia.
