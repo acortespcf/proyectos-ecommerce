@@ -1,6 +1,6 @@
 ---
 name: bitacora
-description: Crea o actualiza bitacoras diarias en `bitacora/inbox/<responsable>/<mes>/DD-MM-AAAA.md` usando `bitacora/TEMPLATE.md` como base cuando el archivo no existe. Si falta informacion obligatoria, pregunta solo lo minimo necesario antes de crear o actualizar el archivo.
+description: Usa este skill cuando el usuario pida `actualiza mis pendientes`, `actualiza pendientes`, `agrega a bitacora` o necesite crear o actualizar bitacoras diarias en `bitacora/inbox/<responsable>/<mes>/DD-MM-AAAA.md`. Tambien cubre la revision de Recordatorios `pcfactory`, Notion `PCF`, tareas, reuniones y la actualizacion de `bitacora/pendientes/ain-pcfactory.md`.
 ---
 
 # Skill: Bitacora Diaria
@@ -8,9 +8,41 @@ description: Crea o actualiza bitacoras diarias en `bitacora/inbox/<responsable>
 ## Objetivo
 Crear o actualizar una bitacora diaria a partir de un listado rapido del usuario, manteniendo el formato del template y pidiendo solo los datos faltantes obligatorios.
 
+Tambien debe resolver el ritual de `actualiza mis pendientes` como un flujo completo de revision y consolidacion de pendientes.
+
 ## Archivos de trabajo
 - Template fuente: `bitacora/TEMPLATE.md`
 - Salida diaria: `bitacora/inbox/<responsable>/<mes>/DD-MM-AAAA.md`
+- Lista consolidada de pendientes: `bitacora/pendientes/ain-pcfactory.md`
+- Flujo diario: `bitacora/FLUJO_DIARIO.md`
+- Documento de pendientes: `docs/bitacora-pendientes.md`
+
+## Disparadores directos
+Si el usuario escribe una frase como alguna de estas, no pedir una aclaracion inicial sobre el destino y ejecutar el flujo correspondiente:
+
+- `actualiza mis pendientes`
+- `actualiza pendientes`
+- `revisa mis pendientes`
+- `lee mis pendientes de pcfactory`
+- `clasifica mis pendientes de pcfactory`
+- `revisa mi teamspace PCF en Notion`
+- `revisa mis reuniones de PCF en Notion`
+
+Asume por defecto que el destino a actualizar es `bitacora/pendientes/ain-pcfactory.md`, salvo que el usuario pida explicitamente otra cosa.
+
+## Flujo para `actualiza mis pendientes`
+1. Revisar Recordatorios en la lista `pcfactory`.
+2. Revisar Notion en el teamspace `PCF`.
+3. Revisar `Tareas` dentro de `PCF` para detectar tareas activas, prioridad, estado, bloqueos y vencimientos.
+4. Revisar `Reuniones` dentro de `PCF` para rescatar acuerdos, siguientes pasos y compromisos pendientes.
+5. Revisar archivos recientes de `bitacora/inbox/` para detectar tareas no consolidadas.
+6. Contrastar todo con `bitacora/pendientes/ain-pcfactory.md`.
+7. Actualizar `bitacora/pendientes/ain-pcfactory.md` cuando existan tareas nuevas, cierres claros, cambios de estado o duplicados.
+8. Responder con un resumen de foco del dia, bloqueos y pendientes relevantes.
+
+## Regla de ambiguedad
+- Dentro de este repositorio, `actualiza mis pendientes` no debe tratarse como una instruccion ambigua.
+- Solo preguntar cuando falte acceso real a una fuente, exista conflicto entre fuentes o el usuario pida otro archivo de destino.
 
 ## Entrada esperada (preferida)
 ```txt

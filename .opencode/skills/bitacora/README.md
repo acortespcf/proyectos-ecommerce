@@ -1,5 +1,19 @@
 # Uso rapido del skill `bitacora`
 
+## Comando canonico para pendientes
+Dentro de este repo, si escribes `actualiza mis pendientes`, el flujo esperado es:
+
+- revisar Recordatorios en la lista `pcfactory`
+- revisar Notion en el teamspace `PCF`
+- revisar `Tareas` dentro de `PCF`
+- revisar `Reuniones` dentro de `PCF`
+- revisar bitacoras recientes en `bitacora/inbox/`
+- contrastar contra `bitacora/pendientes/ain-pcfactory.md`
+- actualizar `bitacora/pendientes/ain-pcfactory.md` si corresponde
+- devolverte foco del dia, bloqueos y pendientes relevantes
+
+No deberia pedir una aclaracion inicial sobre donde actualizar, salvo que falte acceso a alguna fuente o exista un conflicto real.
+
 ## Ejemplo completo
 ```txt
 fecha: 22-05-2026
