@@ -24,6 +24,49 @@ Registrar avances pequenos durante el dia en un archivo diario por persona, crea
 7. Durante el mismo dia sigo actualizando ese mismo archivo cada vez que me digas `agrega a bitacora: ...`.
 8. Al cierre, el archivo ya queda como bitacora diaria del dia, sin necesidad de una consolidacion adicional.
 
+## Ritual de inicio del dia con Recordatorios y Notion
+Este flujo es opcional y personal. Hoy aplica para `ain` en macOS usando la app Recordatorios y Notion como espacio de trabajo principal. No se asume como flujo comun para otros responsables como `seba`, que pueden manejar sus pendientes con otra herramienta.
+
+### Comando canonico
+- Si me dices `actualiza mis pendientes`, se debe ejecutar este ritual completo sin pedir pasos intermedios.
+- La accion debe revisar Recordatorios, Notion y bitacora reciente, y luego actualizar `bitacora/pendientes/ain-pcfactory.md` si corresponde.
+
+1. Al comenzar el dia, me puedes pedir: `lee mis pendientes de pcfactory`.
+2. Yo consulto la lista `pcfactory` desde Recordatorios.
+3. Reviso en Notion el teamspace `PCF` como fuente principal de trabajo.
+4. Dentro de `PCF`, reviso el espacio `Tareas` para detectar tareas activas, prioridades, bloqueos y proximos vencimientos.
+5. Dentro de `PCF`, reviso tambien el espacio `Reuniones` para rescatar acuerdos, siguientes pasos, compromisos pendientes y temas de seguimiento.
+6. Tambien reviso la bitacora reciente para rescatar pendientes abiertos o siguientes pasos no traspasados aun al backlog operativo.
+7. Contrasto todo eso con `bitacora/pendientes/ain-pcfactory.md` para identificar vacios, duplicados o tareas ya cerradas.
+8. Te devuelvo una clasificacion practica de pendientes, por ejemplo: desarrollo, seguimiento, reunion, backlog, bloqueo o admin.
+9. Desde esa clasificacion, te ayudo a definir foco del dia.
+10. Luego, durante la jornada, sigo registrando avances en la bitacora con base en lo que vayas cerrando o moviendo.
+
+## Que debe hacer `actualiza mis pendientes`
+Cuando me digas `actualiza mis pendientes`, debo hacer esto:
+
+1. Leer pendientes abiertos de la lista `pcfactory` en Recordatorios.
+2. Revisar el teamspace `PCF` en Notion.
+3. Revisar `Tareas` dentro de `PCF` para detectar tareas activas, prioridad, estado, bloqueos y vencimientos.
+4. Revisar `Reuniones` dentro de `PCF` para rescatar acuerdos, siguientes pasos y compromisos pendientes.
+5. Revisar archivos recientes de `bitacora/inbox/` para rescatar tareas no consolidadas.
+6. Contrastar todo contra `bitacora/pendientes/ain-pcfactory.md`.
+7. Actualizar `bitacora/pendientes/ain-pcfactory.md` cuando haya pendientes nuevos, cambios de estado, duplicados o cierres claros.
+8. Entregarte un resumen con foco del dia, bloqueos y pendientes relevantes.
+
+## Regla de consolidacion de pendientes
+- La lectura de pendientes debe considerar mas de una fuente cuando aplique.
+- Fuente 1: Recordatorios (`pcfactory`) como captura rapida personal.
+- Fuente 2: archivos recientes de `bitacora/inbox/` para detectar pendientes de cierre, siguientes pasos o tareas que quedaron solo registradas en el diario.
+- Fuente 3: teamspace `PCF` en Notion como contexto general del trabajo.
+- Fuente 4: espacio `Tareas` dentro de `PCF` para revisar tareas en curso, prioridad, estado, bloqueos y vencimientos.
+- Fuente 5: espacio `Reuniones` dentro de `PCF` para rescatar acuerdos, siguientes pasos y compromisos que aun no bajaron al backlog.
+- Fuente 6: `bitacora/pendientes/ain-pcfactory.md` como vista manual consolidada y priorizada.
+- Si aparece un pendiente en bitacora que no existe en la lista consolidada, se debe evaluar si corresponde agregarlo al markdown maestro.
+- Si aparece una tarea activa en Notion o un acuerdo pendiente en reuniones, se debe evaluar si corresponde consolidarlo en el markdown maestro.
+- Si una reunion en `PCF` deja un acuerdo sin responsable explicito o sin seguimiento visible, se debe levantar como pendiente a revisar en el markdown maestro.
+- Si una tarea en `PCF` aparece cerrada o resuelta en reuniones o en bitacora, se debe limpiar o actualizar su estado en el markdown maestro.
+
 ## Formato recomendado para capturas rapidas
 Usa cualquiera de estas formas:
 
@@ -35,10 +78,22 @@ Usa cualquiera de estas formas:
 ```
 
 ## Comandos naturales sugeridos
+- `actualiza mis pendientes`
+- `lee mis pendientes de pcfactory`
+- `clasifica mis pendientes de pcfactory`
+- `revisa mi teamspace PCF en Notion`
+- `revisa mis reuniones de PCF en Notion`
 - `agrega a bitacora: ...`
 - `muestrame mi inbox de hoy`
 - `resume lo que llevo hoy`
 - `actualiza mi bitacora de hoy`
+
+## Salida esperada del ritual matinal
+- Resumen corto de tareas activas y pendientes detectados.
+- Lista de acuerdos o siguientes pasos encontrados en reuniones de `PCF`.
+- Alertas por bloqueos, vencimientos o tareas sin bajar al backlog.
+- Propuesta de foco del dia.
+- Sugerencias de actualizacion para `bitacora/pendientes/ain-pcfactory.md` cuando corresponda.
 
 ## Criterio de registro
 - Desarrollo: issues, investigacion, cambios tecnicos, documentacion, automatizaciones.
