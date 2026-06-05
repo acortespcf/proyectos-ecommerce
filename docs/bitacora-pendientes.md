@@ -1,4 +1,4 @@
-# Pendientes desde Recordatorios y Notion
+# Pendientes desde Recordatorios, Notion y planilla
 
 ## Estado actual
 - Implementado lector local de Recordatorios en `scripts/bitacora/read-reminders.sh` con backend nativo en `swift` (`EventKit`).
@@ -8,6 +8,7 @@
 - El flujo de lectura debe complementarse con revision de bitacora reciente para detectar pendientes no consolidados.
 - Notion debe considerarse fuente valida tanto para tareas activas como para acuerdos de reuniones.
 - El teamspace de trabajo a revisar en Notion para este flujo es `PCF`.
+- La planilla de seguimiento `https://docs.google.com/spreadsheets/d/1QwpTqmoFxOEUnPL1-dAiT2GuqzIcF0tkjUMy2KCBiM8/edit?gid=1841120835#gid=1841120835` debe considerarse fuente valida para detectar tareas vigentes, responsables, estados, fechas y notas de seguimiento.
 
 ## Requisitos para Recordatorios
 - macOS con la app Recordatorios disponible.
@@ -47,6 +48,7 @@ Con eso el flujo esperado es:
 - revisar el teamspace `PCF` en Notion como contexto principal del trabajo
 - revisar el espacio `Tareas` dentro de `PCF` para tareas activas, prioridades, bloqueos y proximos vencimientos
 - revisar el espacio `Reuniones` dentro de `PCF` para acuerdos, siguientes pasos y compromisos pendientes
+- revisar la planilla de seguimiento para rescatar tareas vigentes, responsables, estados, fechas y observaciones utiles para priorizacion
 - leer archivos recientes de `bitacora/inbox/` para rescatar siguientes pasos o pendientes no consolidados
 - contrastar contra `bitacora/pendientes/ain-pcfactory.md`
 - clasificarlos por tipo y urgencia
@@ -57,9 +59,11 @@ Con eso el flujo esperado es:
 - Si un pendiente aparece en la bitacora diaria pero no en la lista consolidada, evaluarlo como candidato a agregar en `bitacora/pendientes/ain-pcfactory.md`.
 - Si una tarea aparece activa en Notion pero no en la lista consolidada, evaluarla como candidata a agregar.
 - Si en una reunion de Notion aparece un acuerdo o siguiente paso sin seguimiento explicito, evaluarlo como candidato a agregar.
+- Si la planilla muestra una tarea vigente o seguimiento activo que no aparece en la lista consolidada, evaluarlo como candidato a agregar.
 - Si una reunion en `PCF` deja un acuerdo sin responsable explicito o sin seguimiento visible, levantarlo como pendiente a revisar en la lista consolidada.
 - Si un pendiente ya fue cerrado en la bitacora o en Recordatorios, limpiar o marcar su estado en la lista consolidada.
 - Si una tarea en `PCF` aparece cerrada o resuelta en reuniones o en la bitacora, limpiar o actualizar su estado en la lista consolidada.
+- Si la planilla muestra un cambio de estado, fecha o cierre mas reciente que otras fuentes, usarla para ajustar la lista consolidada.
 - La idea es evitar que la bitacora diaria acumule tareas abiertas invisibles para el backlog operativo.
 
 ## Salida esperada del ritual matinal
