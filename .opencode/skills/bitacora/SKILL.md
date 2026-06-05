@@ -1,6 +1,6 @@
 ---
 name: bitacora
-description: Usa este skill cuando el usuario pida `actualiza mis pendientes`, `actualiza pendientes`, `agrega a bitacora` o necesite crear o actualizar bitacoras diarias en `bitacora/inbox/<responsable>/<mes>/DD-MM-AAAA.md`. Tambien cubre la revision de Recordatorios `pcfactory`, Notion `PCF`, tareas, reuniones y la actualizacion de `bitacora/pendientes/ain-pcfactory.md`.
+description: Usa este skill cuando el usuario pida `actualiza mis pendientes`, `actualiza pendientes`, `agrega a bitacora` o necesite crear o actualizar bitacoras diarias en `bitacora/inbox/<responsable>/<mes>/DD-MM-AAAA.md`. Tambien cubre la revision de Recordatorios `pcfactory`, Notion `PCF`, tareas, reuniones, la planilla de seguimiento definida y la actualizacion de `bitacora/pendientes/ain-pcfactory.md`.
 ---
 
 # Skill: Bitacora Diaria
@@ -16,6 +16,7 @@ Tambien debe resolver el ritual de `actualiza mis pendientes` como un flujo comp
 - Lista consolidada de pendientes: `bitacora/pendientes/ain-pcfactory.md`
 - Flujo diario: `bitacora/FLUJO_DIARIO.md`
 - Documento de pendientes: `docs/bitacora-pendientes.md`
+- Planilla de seguimiento: `https://docs.google.com/spreadsheets/d/1QwpTqmoFxOEUnPL1-dAiT2GuqzIcF0tkjUMy2KCBiM8/edit?gid=1841120835#gid=1841120835`
 
 ## Disparadores directos
 Si el usuario escribe una frase como alguna de estas, no pedir una aclaracion inicial sobre el destino y ejecutar el flujo correspondiente:
@@ -35,10 +36,11 @@ Asume por defecto que el destino a actualizar es `bitacora/pendientes/ain-pcfact
 2. Revisar Notion en el teamspace `PCF`.
 3. Revisar `Tareas` dentro de `PCF` para detectar tareas activas, prioridad, estado, bloqueos y vencimientos.
 4. Revisar `Reuniones` dentro de `PCF` para rescatar acuerdos, siguientes pasos y compromisos pendientes.
-5. Revisar archivos recientes de `bitacora/inbox/` para detectar tareas no consolidadas.
-6. Contrastar todo con `bitacora/pendientes/ain-pcfactory.md`.
-7. Actualizar `bitacora/pendientes/ain-pcfactory.md` cuando existan tareas nuevas, cierres claros, cambios de estado o duplicados.
-8. Responder con un resumen de foco del dia, bloqueos y pendientes relevantes.
+5. Revisar la planilla de seguimiento `https://docs.google.com/spreadsheets/d/1QwpTqmoFxOEUnPL1-dAiT2GuqzIcF0tkjUMy2KCBiM8/edit?gid=1841120835#gid=1841120835` para rescatar tareas vigentes, responsables, estados, fechas y observaciones relevantes.
+6. Revisar archivos recientes de `bitacora/inbox/` para detectar tareas no consolidadas.
+7. Contrastar todo con `bitacora/pendientes/ain-pcfactory.md`.
+8. Actualizar `bitacora/pendientes/ain-pcfactory.md` cuando existan tareas nuevas, cierres claros, cambios de estado o duplicados.
+9. Responder con un resumen de foco del dia, bloqueos y pendientes relevantes.
 
 ## Regla de ambiguedad
 - Dentro de este repositorio, `actualiza mis pendientes` no debe tratarse como una instruccion ambigua.
