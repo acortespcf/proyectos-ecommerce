@@ -39,6 +39,14 @@
 
 ---
 
+## 🔗 Enlaces relacionados
+- **Pendientes:** [[bitacora/pendientes/<responsable>-pcfactory]]
+- **Bitacora anterior:** [[bitacora/inbox/<responsable>/<mes>/DD-MM-AAAA]]
+- **Bitacora siguiente:** [[bitacora/inbox/<responsable>/<mes>/DD-MM-AAAA]]
+- **Informe semanal (opcional):** [[bitacora/informes/AAAA-MM-DD-al-AAAA-MM-DD-desarrollo-ecommerce]]
+
+---
+
 ## ✅ Pendientes para siguiente jornada
 *Maximo 3 pendientes concretos y accionables.*
 - [ ] [Pendiente 1]

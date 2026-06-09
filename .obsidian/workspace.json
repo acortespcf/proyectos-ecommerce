@@ -4,21 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "d5a3443c6eac3a79",
+        "id": "ab9ab2b3f968d7ac",
         "type": "tabs",
         "children": [
           {
-            "id": "c5ffb329a07f126d",
+            "id": "50adf16a283134ce",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "bitacora/informes/2026-06-02-al-2026-06-07-desarrollo-ecommerce.md",
-                "mode": "preview",
+                "file": "bitacora/pendientes/ain-pcfactory.md",
+                "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "2026-06-02-al-2026-06-07-desarrollo-ecommerce"
+              "title": "ain-pcfactory"
             }
           }
         ]
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "bitacora/informes/2026-06-02-al-2026-06-07-desarrollo-ecommerce.md",
+                "file": "bitacora/pendientes/ain-pcfactory.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,7 +104,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Enlaces entrantes de 2026-06-02-al-2026-06-07-desarrollo-ecommerce"
+              "title": "Enlaces entrantes de ain-pcfactory"
             }
           },
           {
@@ -182,13 +182,15 @@
       "bases:Crear nueva base": false
     }
   },
-  "active": "c5ffb329a07f126d",
+  "active": "50adf16a283134ce",
   "lastOpenFiles": [
-    "bitacora/pendientes/seba-pcfactory.md",
+    "bitacora/informes/2026-06-01-al-2026-06-07-desarrollo-ecommerce.md",
     "bitacora/informes/2026-06-02-al-2026-06-07-desarrollo-ecommerce.md",
+    "bitacora/inbox/ain/junio/09-06-2026.md",
+    "bitacora/inbox/ain/junio/01-06-2026.md",
+    "bitacora/pendientes/seba-pcfactory.md",
     "bitacora/informes",
     "bitacora/inbox/ain/junio/04-06-2026.md",
-    "bitacora/inbox/ain/junio/09-06-2026.md",
     "bitacora/inbox/ain/junio/05-06-2026.md",
     "bitacora/pendientes/ain-pcfactory.md",
     "bitacora/FLUJO_DIARIO.md",
