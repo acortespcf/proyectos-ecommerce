@@ -4,7 +4,7 @@
 ## Estado
 - Responsable: `ain`
 - Fuente principal: lista `pcfactory` en Recordatorios
-- Ultima actualizacion: `2026-06-08`
+- Ultima actualizacion: `2026-06-09`
 - Ultimo conteo conocido en Recordatorios: `43`
 
 ## Criterio de uso
@@ -37,6 +37,8 @@
 - [ ] Monitorear con Romina el despliegue del backend de textos SEO para PDP de la issue `#149`. `Fuente: Bitacora 08-06-2026`
 - [ ] Confirmar con Romina la ejecucion de la carga masiva usando la planilla de Ale. `Fuente: Bitacora 08-06-2026`
 - [ ] Apoyar a Alejandro con la actualizacion del sitemap. `Fuente: Bitacora 08-06-2026, Notion/sitemap`
+- [ ] Monitorear si el despliegue del codigo `v0.2` de Loadstone mejora efectivamente la velocidad de carga del sitio. `Fuente: Bitacora 09-06-2026, Reunion Loadstone`
+- [ ] Validar con marketing o con los solicitantes de cupones la letra chica minima obligatoria para cerrar la propuesta de checkout. `Fuente: Bitacora 09-06-2026, Reunion iniciativas / cupones`
 
 ## Notion / Tareas activas
 - [ ] Revisar si `Modernizacion del checkout` debe entrar a mis pendientes activos o quedar solo como seguimiento - Notion: https://app.notion.com/p/2d5b136822478033859ae192d8157c15. `Fuente: Notion/Tareas`
@@ -96,10 +98,12 @@
 - [ ] Hablar con la majo sobre las cuentas de copilot. `Fuente: Recordatorios`
 - [ ] Hablar con Nicolas de b2b del formulario. `Fuente: Recordatorios`
 - [ ] Hablar sobre los monitores pasarlos a PCF. `Fuente: Recordatorios`
+- [ ] Hablar con Molina y Nuno para alinear el footer de los correos promocionales con el diseno vigente del eCommerce. `Fuente: Bitacora 09-06-2026, Reunion iniciativas / cupones`
 - [ ] Dar seguimiento a Sebastian sobre [issue 149](https://github.com/acortespcf/proyectos-ecommerce/issues/149), [issue 155](https://github.com/acortespcf/proyectos-ecommerce/issues/155) y landing del Dia del Padre. `Fuente: Bitacora 03-06-2026`
 - [ ] El lunes vamos a hacer una lista de las fechas en las que necesitamos los contenidos para las landings. `Fuente: Recordatorios`
 - [ ] Revisar prioridades para tomar lo de algolia (user token). `Fuente: Recordatorios`
 - [ ] Revisar con quien corresponda el bloqueo de `ClaudeBot`, `Claude-SearchBot` y `Claude-User` para que Claude pueda descubrir productos de PCF. `Fuente: Bitacora 08-06-2026`
+- [ ] Si aparecen productos raros en el carrusel de populares, enviar SKU / ID a Loadstone antes de que rote el ciclo de 24 horas. `Fuente: Bitacora 09-06-2026, Reunion Loadstone`
 
 ## Investigacion / Evaluacion
 - [ ] Hacer QA de usuario web. `Fuente: Recordatorios`
@@ -127,3 +131,4 @@
 - La bitacora del `08-06-2026` confirma como cierres operativos que ya se pidio la planilla de Ale, ya se coordino la prueba en vivo con Juan Pablo y ya se revisaron las maquetas de cupones.
 - La bitacora del `08-06-2026` agrega nuevos frentes: bloqueo critico de Webpay, despliegue pendiente de Rutpay, apoyo a sitemap con Alejandro y maxima prioridad a tabulaciones automaticas antes del viernes.
 - La bitacora del `08-06-2026` tambien deja registrado que ya se trabajo un plan para que PMs generen tabulaciones de sus familias y que manana toca avanzar la implementacion.
+- La bitacora del `09-06-2026` suma seguimiento a performance de Loadstone (`v0.2`), validacion de letra chica de cupones, alineacion de footers con marketing y monitoreo operativo de productos raros en populares.
