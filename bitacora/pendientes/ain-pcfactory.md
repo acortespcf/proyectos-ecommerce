@@ -4,8 +4,8 @@
 ## Estado
 - Responsable: `ain`
 - Fuente principal: lista `pcfactory` en Recordatorios
-- Ultima actualizacion: `2026-06-09`
-- Ultimo conteo conocido en Recordatorios: `43`
+- Ultima actualizacion: `2026-06-10`
+- Ultimo conteo conocido en Recordatorios: `38`
 
 ## Criterio de uso
 - Este archivo consolida pendientes activos y clasificados.
@@ -47,9 +47,9 @@
 - [ ] Monitorear si el despliegue del codigo `v0.2` de Loadstone mejora efectivamente la velocidad de carga del sitio. `Fuente: Bitacora [[bitacora/inbox/ain/junio/09-06-2026|09-06-2026]], Reunion Loadstone`
 - [ ] Definir con Sebastian y el equipo si el PAP de manana incluye estilos y landings o si conviene mover ese bloque completo a la proxima semana. `Fuente: Bitacora [[bitacora/inbox/ain/junio/09-06-2026|09-06-2026]], coordinacion con Sebastian`
 - [ ] Validar con marketing o con los solicitantes de cupones la letra chica minima obligatoria para cerrar la propuesta de checkout. `Fuente: Bitacora [[bitacora/inbox/ain/junio/09-06-2026|09-06-2026]], Reunion iniciativas / cupones`
+- [ ] Revalidar con Alan o con el equipo de cupones como se resolvera el desfase de 5 minutos de stock al momento del pago. `Fuente: Notion/Refinamiento ecommerce - Cupones y Ley de Datos, Bitacora [[bitacora/inbox/ain/junio/08-06-2026|08-06-2026]]`
 
 ## Notion / Tareas activas
-- [ ] Revisar si `Modernizacion del checkout` debe entrar a mis pendientes activos o quedar solo como seguimiento - Notion: https://app.notion.com/p/2d5b136822478033859ae192d8157c15. `Fuente: Notion/Tareas`
 - [ ] Revisar alcance de `Mejoras visuales y de seo PLP y PDP` (`Alta`, `Por iniciar`) y decidir si entra al foco activo - Notion: https://app.notion.com/p/372b1368224780fe9a6fe7154bb1f92a. `Fuente: Notion/Tareas`
 
 ## Esta semana
@@ -67,7 +67,7 @@
 - [ ] Aplicar correcciones sitemap. `Fuente: Recordatorios, Notion/Reuniones`
 - [ ] Crear requerimiento sitemap automatico. `Fuente: Recordatorios`
 - [ ] Hacer QA al desarrollo de separacion de usuario. `Fuente: Conversacion actual`
-- [ ] Hacer QA al cambio de bodegas de exhibicion en tiendas, validando que el stock se sume al stock de tienda visible en la web. `Fuente: Conversacion actual, Bitacora [[bitacora/inbox/ain/junio/03-06-2026|03-06-2026]], Notion/Reuniones`
+- [ ] Hacer QA al cambio de bodegas de exhibicion en tiendas, validando que el stock de exhibicion se sume al stock visible en la web. `Fuente: Recordatorios, Bitacora [[bitacora/inbox/ain/junio/03-06-2026|03-06-2026]], Notion/Reuniones/bodegas Vitrinas`
 - [ ] Tener reunion el miercoles con Maria Jose, Alejandro y Pedro para revisar tabulaciones. `Fuente: Conversacion actual`
 
 ## Desarrollo / Implementacion
@@ -92,8 +92,9 @@
 
 ## Requerimientos / Definicion
 - [ ] Crear requerimiento ordenamiento de paginas de categorias. `Fuente: Recordatorios`
-- [ ] Revisar, refinar y crear requerimiento `same day`. `Fuente: Conversacion actual; pendiente de bajar a Recordatorios o Notion`
+- [ ] Revisar, refinar y crear requerimiento `same day`, partiendo por pedir presentacion del proyecto. `Fuente: Recordatorios, Notion/Same day`
 - [ ] Revisar, refinar y crear requerimiento de retiro en centro de distribucion de curriers (`Starken`, `Chilexpress`, `Bluexpress`, etc.). `Fuente: Conversacion actual; pendiente de bajar a Recordatorios o Notion`
+- [ ] Crear requerimiento para implementar nuevos carruseles de Retail Rocket en home, incluyendo solicitud de diseno, QA e implementacion. `Fuente: Recordatorios`
 - [ ] Crear requerimiento para arreglar el menu. `Fuente: Recordatorios`
 - [ ] Crear requerimiento para arreglar el menu (desktop). `Fuente: Recordatorios`
 - [ ] Crear requerimiento para arreglar el menu (mobile). `Fuente: Recordatorios`
@@ -130,10 +131,10 @@
 - `Crear tarjeta cupón (Ain)` aparece `Completado` en Notion al 03-06-2026.
 - La revision de correos ya se bajo a los issues `158`, `159` y `160`, agrupados en el milestone `#4`.
 - La bitacora del 03-06-2026 tambien confirma seguimiento activo a `issue 149`, `issue 155`, reunion de cupon de descuento, QA de cuarta bodega, completar la informacion de las issues de correos y probar tabulaciones con notebooks.
-- Ultimo conteo conocido en Recordatorios `pcfactory`: `43` abiertos.
+- Ultimo conteo conocido en Recordatorios `pcfactory`: `38` abiertos.
 - En Recordatorios seguia abierto `Agendar reunion para revisar requerimiento Cupones`; conviene revalidar si ese rastro ya se puede cerrar con el avance consolidado en bitacora.
 - En la bitacora del 04-06-2026 quedaron resueltos la actualizacion de la issue de cupones y los mensajes de API para front; la bitacora del 08-06-2026 suma que las maquetas ya fueron revisadas.
-- En esta sesion no hubo acceso directo a Recordatorios; el conteo de `43` queda como ultimo valor conocido.
+- En esta sesion si hubo acceso directo a Recordatorios y se revalido el conteo en `38` abiertos.
 - En esta sesion la planilla de seguimiento devolvio `401`, por lo que falta revalidar ese acceso antes de contrastarla de nuevo.
 - La revision de cambios de hoy en `/Users/ain/Code` mostro actividad concreta en `pcf/chile/urls`, `pcf/herramientas_seo/tabulaciones`, `pcf/herramientas_seo/corewebvitals` y `pcf/proyectos-ecommerce/docs/planes-issues`.
 - Queda registrada para la proxima semana una reunion ya agendada con Maria Jose, Alejandro y Pedro para revisar tabulaciones.
@@ -141,3 +142,10 @@
 - La bitacora del `08-06-2026` agrega nuevos frentes: bloqueo critico de Webpay, despliegue pendiente de Rutpay, apoyo a sitemap con Alejandro y maxima prioridad a tabulaciones automaticas antes del viernes.
 - La bitacora del `08-06-2026` tambien deja registrado que ya se trabajo un plan para que PMs generen tabulaciones de sus familias y que tocaba avanzar la implementacion, hoy ya aterrizada en un flujo con salida para Google Sheets.
 - La bitacora del `09-06-2026` suma seguimiento a performance de Loadstone (`v0.2`), validacion de letra chica de cupones, alineacion de footers con marketing, monitoreo operativo de productos raros en populares y coordinacion con Sebastian sobre PAP, bugs de filtros, FAQ y schema SEO.
+- La revision de Notion en `PCF` confirmo que `Modernizacion del checkout` sigue `Por iniciar`, pero por definicion actual no se tomara antes de `Q3` y podria moverse incluso al ultimo quarter del ano; se mantiene solo como seguimiento de largo plazo.
+- La revision de Notion en `PCF` confirmo que `Mejoras visuales y de seo PLP y PDP` sigue `Por iniciar` y mantiene prioridad `Alta`.
+- La reunion `bodegas Vitrinas` en Notion confirma que el cambio esperado es sumar stock de exhibicion al stock visible en la web.
+- La reunion `sitemap` en Notion mantiene vigente la necesidad de planilla/script para landings, orden de URLs y uso de `lastmod`, `changefreq` y `priority`.
+- La reunion `Same day` en Notion confirma que el alcance inicial seria despacho same day en Santiago desde CD, con horario de corte y fuera de mayoristas; falta bajarlo a requerimiento formal.
+- La reunion `Refinamiento ecommerce - Cupones y Ley de Datos` confirma como pendientes la revalidacion del stock al pago para cupones y la centralizacion de consentimientos en un panel de privacidad.
+- En la sesion del `10-06-2026` Recordatorios `pcfactory` siguio con `38` abiertos y la planilla de seguimiento volvio a responder `401`.
