@@ -3,11 +3,11 @@
 ## Periodo
 - Semana analizada: `2026-06-01` a `2026-06-07`
 - Equipo: `ain` y `seba`
-- Fecha de generacion: `2026-06-09`
+- Fecha de generacion: `2026-06-10`
 
 ## Fuentes consideradas
 - Bitacoras en [[bitacora/inbox/ain/junio/01-06-2026]], [[bitacora/inbox/ain/junio/02-06-2026]], [[bitacora/inbox/ain/junio/03-06-2026]], [[bitacora/inbox/ain/junio/04-06-2026]] y [[bitacora/inbox/ain/junio/05-06-2026]]
-- Bitacoras en [[bitacora/inbox/seba/junio/03-06-2026]] y [[bitacora/inbox/seba/junio/04-06-2026]]
+- Bitacoras en [[bitacora/inbox/seba/junio/03-06-2026]], [[bitacora/inbox/seba/junio/04-06-2026]] y [[bitacora/inbox/seba/junio/05-06-2026]]
 - Pendientes consolidados en [[bitacora/pendientes/ain-pcfactory]] y [[bitacora/pendientes/seba-pcfactory]]
 - Validacion posterior en [[bitacora/inbox/ain/junio/08-06-2026]] y [[bitacora/inbox/ain/junio/09-06-2026]] para confirmar arrastres, cierres y cambios de prioridad del periodo analizado
 
@@ -23,10 +23,11 @@
 - [[bitacora/inbox/ain/junio/09-06-2026]]
 - [[bitacora/inbox/seba/junio/03-06-2026]]
 - [[bitacora/inbox/seba/junio/04-06-2026]]
+- [[bitacora/inbox/seba/junio/05-06-2026]]
 
 ## Cobertura y criterio
 - `ain`: 5 bitacoras registradas en la semana analizada.
-- `seba`: 2 bitacoras registradas en la semana analizada.
+- `seba`: 3 bitacoras registradas en la semana analizada.
 - La comparacion entre personas debe leerse con cautela: una parte de la diferencia responde a cobertura de registro, no necesariamente a carga real de trabajo.
 - Las metricas se basan en evidencia escrita de bitacora y pendientes, no en tiempo dedicado ni esfuerzo real.
 
@@ -35,7 +36,7 @@
 - Tambien aparecieron dos lineas complementarias que no conviene perder de vista: levantamiento de trabajo para correos transaccionales/comerciales y definicion operativa del cambio de `3` a `4` bodegas por tienda con stock de exhibicion visible en web.
 - `ain` concentro mayor carga en definicion tecnica, automatizaciones, levantamiento de issues y seguimiento transversal de iniciativas.
 - `seba` concentro mayor carga en operacion de campanas, seguimiento funcional y coordinacion de salidas comerciales y ajustes post-freeze.
-- El equipo avanzo bien en articulacion negocio-desarrollo, pero queda una cola importante de pendientes abiertos: `76` items en el consolidado de `ain` y `13` items en el consolidado de `seba`.
+- El equipo avanzo bien en articulacion negocio-desarrollo, pero queda una cola importante de pendientes abiertos: `75` items en el consolidado de `ain` y `13` items en el consolidado de `seba`.
 - La validacion hecha el `08-06` y `09-06` confirma que los principales arrastres de la semana fueron tabulaciones, cupones y correcciones de checkout asociadas a `Rutpay`/`RUT`; tambien muestra que tabulaciones escalo de iniciativa en avance a prioridad maxima operativa.
 
 ## Metricas
@@ -43,9 +44,9 @@
 ### Actividad registrada
 | Metrica | ain | seba | Total |
 | --- | ---: | ---: | ---: |
-| Bitacoras de la semana | 5 | 2 | 7 |
-| Dias con desarrollo activo | 5 | 2 | 7 |
-| Dias con trabajo de campanas | 4 | 2 | 6 |
+| Bitacoras de la semana | 5 | 3 | 8 |
+| Dias con desarrollo activo | 5 | 3 | 8 |
+| Dias con trabajo de campanas | 4 | 3 | 7 |
 | Dias con reuniones / gestion activas | 3 | 2 | 5 |
 | Dias con bloqueos o alertas explicitas | 1 | 1 | 2 |
 
@@ -55,8 +56,8 @@
 | Issues nuevas detectadas o empujadas desde bitacora | 11 | 0 | 11 |
 | Issues existentes con seguimiento explicito | 4 | 2 | 6 |
 | PRs o workflows mencionados | 1 | 0 | 1 |
-| Campanas activas tocadas | 2 | 3 | 3 unicas |
-| Pendientes abiertos en consolidado actual | 76 | 13 | 89 |
+| Campanas activas tocadas | 2 | 4 | 4 unicas |
+| Pendientes abiertos en consolidado actual | 75 | 13 | 88 |
 
 ## Principales frentes trabajados
 
@@ -64,6 +65,7 @@
 - Ajustes y cierre operativo de `Cyber`.
 - Preparacion y cambios de `Dia del Padre`.
 - Coordinacion de salida de `Papa mundialero`.
+- Ajustes operativos de `Ofertas flash` para desacoplarla del cierre de `Cyber`.
 - Actualizacion de landings, productos, graficas, metas y estructuras de categorias.
 
 ### 2. Cupones y definicion funcional
@@ -98,12 +100,13 @@
 - Se concentro en ejecucion y seguimiento funcional de campanas, especialmente `Cyber`, `Dia del Padre` y `Papa mundialero`.
 - Mantuvo avance sobre `#148` y preparacion de `#155` para paso a produccion.
 - Participo activamente en refinamiento de cupones y detecto necesidades concretas post-freeze para checkout.
+- Tambien dejo encaminado un fix para refactorizar la `franja features` y alinearla con la salida comercial de la semana siguiente.
 - Su registro muestra un perfil mas operativo y de coordinacion que de generacion de backlog tecnico.
 
 ## Hallazgos de gestion
 - Hay una buena complementariedad de roles: `ain` empuja discovery, definicion y backlog; `seba` empuja operacion comercial, ejecucion funcional y seguimiento de salida.
 - El area esta reaccionando a multiples frentes a la vez, pero los pendientes muestran riesgo de dispersion, especialmente en `ain`.
-- La cobertura de bitacora de `seba` aun es baja para medir tendencia semanal con precision. Conviene sostener el registro diario para mejorar trazabilidad.
+- La cobertura de bitacora de `seba` mejora al sumar `3` registros en la semana, pero aun es menor que la de `ain`; conviene sostener el registro diario para mejorar trazabilidad.
 - Los bloqueos mas concretos de la semana quedaron ligados al `freeze` y a dependencias con otras areas, no a impedimentos tecnicos internos del equipo.
 - Varias tareas relevantes de la semana dependen de terceros incluso cuando el equipo de desarrollo ya avanzo su parte: planilla de IDs para `Dia del Padre`, disponibilidad de TI para QA de cuarta bodega y cierre de definiciones funcionales de cupones.
 
@@ -111,7 +114,7 @@
 - Riesgo de sobrecarga en `ain`: backlog consolidado muy superior al resto del equipo y con mezcla de discovery, seguimiento, definicion y soporte operativo.
 - Riesgo de arrastre post-freeze en checkout: dos correcciones de `Rutpay` y validacion de `RUT` quedaron pendientes de ejecucion.
 - Riesgo de dispersion en tabulaciones: la semana cerro con avance tecnico, pero la validacion posterior confirma que el frente paso a prioridad maxima y con expectativa de dejar flujo usable por PMs no tecnicos en muy corto plazo.
-- Riesgo de trazabilidad desigual: las metricas de `seba` pueden estar subrepresentadas por menor cantidad de bitacoras.
+- Riesgo de trazabilidad desigual: las metricas de `seba` siguen potencialmente subrepresentadas por menor cantidad de bitacoras respecto de `ain`.
 - Riesgo de dependencia externa en frentes operativos: parte del avance comercial y de validacion tecnica sigue atado a insumos de otras areas, especialmente IDs para campañas y validacion TI del cambio de bodegas.
 
 ## Recomendaciones operativas
@@ -125,6 +128,8 @@
 - Tabulaciones: lo que en la semana aparecia como automatizacion en progreso quedo re-priorizado como entrega critica de corto plazo, con expectativa explicita de flujo operable para PMs no tecnicos y apoyo desde Google Sheets.
 - Checkout / pagos: las dos correcciones post-freeze (`modal Rutpay` y mensaje de error de `RUT`) siguen vigentes y se sostienen como arrastre real del periodo.
 - El error critico de `Webpay` aparece recien el `08-06`, por lo que no cambia la lectura de la semana analizada, pero si aumenta el riesgo operativo con el que el equipo arranca la semana siguiente.
+- Pendientes: la actualizacion del consolidado al `10-06` baja marginalmente la cola de `ain` de `76` a `75` abiertos; no cambia la lectura de sobrecarga, pero si confirma una poda menor del backlog.
+- Trazabilidad externa: la planilla de seguimiento seguia devolviendo `401` al `10-06`, asi que la validacion posterior se sostiene principalmente sobre bitacoras y consolidados locales.
 
 ## Propuesta de lectura gerencial
 - La semana pasada el area de desarrollo de eCommerce opero en modo mixto: soporte comercial fuerte por campanas, refinamiento funcional de cupones, y al mismo tiempo construccion de base tecnica para mejoras SEO, performance y automatizacion interna.
