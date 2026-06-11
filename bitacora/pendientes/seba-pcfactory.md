@@ -3,9 +3,9 @@
 ## Estado
 - Responsable: `seba`
 - Fuente principal: bitacoras en `bitacora/inbox/seba/`
-- Ultima actualizacion: `2026-06-09`
-- Ultima bitacora consolidada: `2026-06-04`
-- Cobertura revisada: `6` bitacoras entre `2026-05-22` y `2026-06-04`
+- Ultima actualizacion: `2026-06-10`
+- Ultima bitacora consolidada: `2026-06-10`
+- Cobertura revisada: `7` bitacoras entre `2026-05-22` y `2026-06-10`
 
 ## Criterio de uso
 - Este archivo consolida pendientes activos y clasificados de Sebastian.
@@ -20,6 +20,7 @@
 - [[bitacora/inbox/seba/mayo/26-05-2026-seba]]
 - [[bitacora/inbox/seba/junio/03-06-2026]]
 - [[bitacora/inbox/seba/junio/04-06-2026]]
+- [[bitacora/inbox/seba/junio/10-06-2026]]
 - [[bitacora/informes/2026-06-02-al-2026-06-07-desarrollo-ecommerce]]
 
 ## Criticos
@@ -27,14 +28,15 @@
 - [ ] Ejecutar despues del freeze la correccion visual del mensaje de error del input de RUT para que se muestre en color rojo. `Fuente: Bitacora [[bitacora/inbox/seba/junio/04-06-2026|04-06-2026]]`
 
 ## Hoy
-- [ ] Continuar ajustes operativos y de contenido sobre landings y productos de Dia del Padre y Cyber segun avance de campanas. `Fuente: Bitacora [[bitacora/inbox/seba/junio/04-06-2026|04-06-2026]]`
-- [ ] Validar que la tarjeta `#148` tenga todas las pruebas realizadas y dejar registro antes de dar cierre. `Fuente: Bitacora [[bitacora/inbox/seba/junio/03-06-2026|03-06-2026]]`
+- [ ] Revisar banner categorias precio producto: que no muestre en el front el precio referencial si el endpoint no lo trae. `Fuente: Bitacora [[bitacora/inbox/seba/junio/10-06-2026|10-06-2026]]`
+- [ ] Agregar iconos al menu de suministros impresora. `Fuente: Bitacora [[bitacora/inbox/seba/junio/10-06-2026|10-06-2026]]`
+- [ ] Revisar correo de Intel Pro, puede que el landing requiera renovarse. `Fuente: Bitacora [[bitacora/inbox/seba/junio/10-06-2026|10-06-2026]]`
 
 ## Esta semana
-- [ ] Comenzar o continuar el desarrollo de la tarjeta `#155` para preparar su paso a produccion durante la proxima semana. `Fuente: Bitacora [[bitacora/inbox/seba/junio/03-06-2026|03-06-2026]]`
+- [ ] Continuar con la campana Intel Pro: completar los 3 PDFs restantes del landing de ventajas de procesadores. `Fuente: Bitacora [[bitacora/inbox/seba/junio/10-06-2026|10-06-2026]]`
+- [ ] Issue `#155` postergado para la proxima semana por revision de gerencia de ecommerce. `Fuente: Bitacora [[bitacora/inbox/seba/junio/10-06-2026|10-06-2026]]`
 - [ ] Dar seguimiento operativo a la salida de Dia del Padre, incluyendo cambios de grafica, metas, contenido y productos disponibles. `Fuente: Bitacora [[bitacora/inbox/seba/junio/04-06-2026|04-06-2026]]`
 - [ ] Dar seguimiento operativo a la campana `Papa mundialero` y a su presentacion en sitio hasta el `28-06-2026`. `Fuente: Bitacora [[bitacora/inbox/seba/junio/04-06-2026|04-06-2026]]`
-- [ ] Cerrar correctamente la etapa final de Cyber, incluyendo ajustes de productos antes del cierre del `07-06-2026`. `Fuente: Bitacora [[bitacora/inbox/seba/junio/04-06-2026|04-06-2026]]`
 
 ## Desarrollo / Implementacion
 - [ ] Mantener trazabilidad de las definiciones funcionales de cupones para que la bajada a desarrollo quede clara. `Fuente: Bitacora [[bitacora/inbox/seba/junio/04-06-2026|04-06-2026]]`
@@ -45,7 +47,7 @@
 - [ ] Sostener el registro diario en bitacora para ir cerrando o actualizando estos pendientes con mejor evidencia. `Fuente: Bitacora [[bitacora/inbox/seba/junio/03-06-2026|03-06-2026]]`
 
 ## Bloqueos
-- [ ] El freeze sigue siendo bloqueo para mover a ejecucion las correcciones de checkout y validacion de RUT. `Fuente: Bitacora [[bitacora/inbox/seba/junio/04-06-2026|04-06-2026]]`
+- [ ] Issue `#155` postergado: requiere revision de gerencia de ecommerce antes de pasar a produccion. `Fuente: Bitacora [[bitacora/inbox/seba/junio/10-06-2026|10-06-2026]]`
 
 ## Notas
 - Este archivo parte solo desde bitacoras; faltaria enriquecerlo despues con Recordatorios, Notion y planilla si se quiere una vista mas completa.
