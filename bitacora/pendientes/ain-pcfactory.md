@@ -4,8 +4,8 @@
 ## Estado
 - Responsable: `ain`
 - Fuente principal: lista `pcfactory` en Recordatorios
-- Ultima actualizacion: `2026-06-10`
-- Ultimo conteo conocido en Recordatorios: `38`
+- Ultima actualizacion: `2026-06-12`
+- Ultimo conteo conocido en Recordatorios: `43`
 
 ## Criterio de uso
 - Este archivo consolida pendientes activos y clasificados.
@@ -23,57 +23,68 @@
 - [[bitacora/inbox/ain/junio/05-06-2026]]
 - [[bitacora/inbox/ain/junio/08-06-2026]]
 - [[bitacora/inbox/ain/junio/09-06-2026]]
+- [[bitacora/inbox/ain/junio/10-06-2026]]
+- [[bitacora/inbox/ain/junio/11-06-2026]]
+- [[bitacora/inbox/ain/junio/12-06-2026]]
 - [[bitacora/informes/2026-06-01-al-2026-06-07-desarrollo-ecommerce]]
 
 ## Críticos
 - [x] Destrabar el error critico de Webpay: el token de Transbank no se registra en la tabla de pedidos y la compra se anula automaticamente. `Fuente: Bitacora [[bitacora/inbox/ain/junio/08-06-2026|08-06-2026]]`
 - [ ] Prioridad máxima: cerrar un flujo operable de tabulaciones automaticas para PMs no técnicos, incluyendo implementación, salida en Google Sheets y material explicativo sin terminal ni agentes de IA. `Fuente: Bitacora [[bitacora/inbox/ain/junio/08-06-2026|08-06-2026]], Notion/Analisis Tabulaciones, Bitacora [[bitacora/inbox/ain/junio/09-06-2026|09-06-2026]]`
-- [ ] Coordinar el paso a producción y seguimiento operativo del monitor de payments con Rutpay `monitoring-ecommerce-web#20`, ya mergeado. `Fuente: Bitacora [[bitacora/inbox/ain/junio/08-06-2026|08-06-2026]], GitHub, revision repos 09-06-2026`
+- [x] Coordinar el paso a producción y seguimiento operativo del monitor de payments con Rutpay `monitoring-ecommerce-web#20`, ya mergeado. `Fuente: Bitacora [[bitacora/inbox/ain/junio/08-06-2026|08-06-2026]], GitHub, revision repos 09-06-2026`
 - [ ] Dar seguimiento al milestone de correos 
 - [ ] Dar seguiriento a  los issues `ISSUE-158`, `ISSUE-159` e `ISSUE-160`. `Fuente: Conversacion actual, GitHub, Notion/Reuniones`
 - [ ] Completar las issues de correos con la informacion que tiene Sebastian del desarrollo. `Fuente: Bitacora [[bitacora/inbox/ain/junio/03-06-2026|03-06-2026]]`
 - [ ] Ver perfiles sphinx con raúl. `Fuente: Recordatorios`
 - [ ] Crear tarjeta para corregir modal rutpay y input rut en el checkout
 - [ ] Agregar maquetas en la tarjeta pdp y plp [issue 155](https://github.com/acortespcf/proyectos-ecommerce/issues/155)
+- [ ] Buscar el plan de pruebas previo de login/registro y ampliarlo con casos de validacion de identidad, errores de correo, compra como invitado y RUT duplicado. `Fuente: Bitacora [[bitacora/inbox/ain/junio/11-06-2026|11-06-2026]], reunion seguridad de registro`
+- [ ] Investigar como resuelven otros sitios la recuperacion de cuenta cuando el usuario olvida su correo, considerando correo enmascarado, RUT y telefono. `Fuente: Bitacora [[bitacora/inbox/ain/junio/11-06-2026|11-06-2026]], reunion seguridad de registro`
 
 
 
 ## Hoy
+- [ ] Revisar el `UAT Proyecto Bodega Exhibicion` en `sphinx12.pcfactory.cl`, cubriendo sub-bodegas por tienda, permisos, priorizacion de stock, integracion web y alertas. `Fuente: Bitacora [[bitacora/inbox/ain/junio/11-06-2026|11-06-2026]], correo de Angelica Lugo`
+- [ ] Implementar o coordinar el ajuste del CTA del paso 2 del checkout para unificar desktop y mobile, alineado con el frente de cupones. `Fuente: Bitacora [[bitacora/inbox/ain/junio/11-06-2026|11-06-2026]], coordinacion con Mariana`
+- [ ] Dar seguimiento operativo a la landing Imbatible, validando banners en `1792x490 px` y el cierre comprometido para el domingo a las `23:59`. `Fuente: Bitacora [[bitacora/inbox/ain/junio/11-06-2026|11-06-2026]]`
 - [ ] Consolidar el flujo automatico de tabulaciones usando los resultados obtenidos con notebooks y dejar una salida operable para PMs desde Google Sheets. `Fuente: Recordatorios, Bitacoras [[bitacora/inbox/ain/junio/04-06-2026|04-06-2026]] y [[bitacora/inbox/ain/junio/09-06-2026|09-06-2026]]`
 - [ ] Actualizar el requerimiento de Ley de Datos especificando en que vistas exactas se pedira el consentimiento y revisar con Mariana los textos legales. `Fuente: Bitacora [[bitacora/inbox/ain/junio/08-06-2026|08-06-2026]]`
-- [ ] Monitorear con Romina el despliegue del backend de textos SEO para PDP de la issue `#149`. `Fuente: Bitacora [[bitacora/inbox/ain/junio/08-06-2026|08-06-2026]]`
+- [x] Monitorear con Romina el despliegue del backend de textos SEO para PDP de la issue `#149`. `Fuente: Bitacora [[bitacora/inbox/ain/junio/08-06-2026|08-06-2026]]`
 - [ ] Confirmar con Romina la ejecucion de la carga masiva usando la planilla de Ale. `Fuente: Bitacora [[bitacora/inbox/ain/junio/08-06-2026|08-06-2026]]`
-- [ ] Apoyar a Alejandro con la actualizacion del sitemap. `Fuente: Bitacora [[bitacora/inbox/ain/junio/08-06-2026|08-06-2026]], Notion/sitemap`
+- [x] Apoyar a Alejandro con la actualizacion del sitemap. `Fuente: Bitacora [[bitacora/inbox/ain/junio/08-06-2026|08-06-2026]], Notion/sitemap`
 - [ ] Monitorear si el despliegue del codigo `v0.2` de Loadstone mejora efectivamente la velocidad de carga del sitio. `Fuente: Bitacora [[bitacora/inbox/ain/junio/09-06-2026|09-06-2026]], Reunion Loadstone`
 - [ ] Definir con Sebastian y el equipo si el PAP de manana incluye estilos y landings o si conviene mover ese bloque completo a la proxima semana. `Fuente: Bitacora [[bitacora/inbox/ain/junio/09-06-2026|09-06-2026]], coordinacion con Sebastian`
 - [ ] Validar con marketing o con los solicitantes de cupones la letra chica minima obligatoria para cerrar la propuesta de checkout. `Fuente: Bitacora [[bitacora/inbox/ain/junio/09-06-2026|09-06-2026]], Reunion iniciativas / cupones`
 - [ ] Revalidar con Alan o con el equipo de cupones como se resolvera el desfase de 5 minutos de stock al momento del pago. `Fuente: Notion/Refinamiento ecommerce - Cupones y Ley de Datos, Bitacora [[bitacora/inbox/ain/junio/08-06-2026|08-06-2026]]`
+- [ ] Preparar la reunion de manana cerca de las `12:00` para consolidar el plan de pruebas de login/registro con foco en seguridad y validacion de identidad. `Fuente: Bitacora [[bitacora/inbox/ain/junio/11-06-2026|11-06-2026]], reunion seguridad de registro`
 
 ## Notion / Tareas activas
-- [ ] Revisar alcance de `Mejoras visuales y de seo PLP y PDP` (`Alta`, `Por iniciar`) y decidir si entra al foco activo - Notion: https://app.notion.com/p/372b1368224780fe9a6fe7154bb1f92a. `Fuente: Notion/Tareas`
+- [ ] `Mejoras visuales y de seo PLP y PDP` ya figura `Alta` y `En curso`; falta decidir si entra al foco activo inmediato y como se coordina con `#149`, `#155` y cupones - Notion: https://app.notion.com/p/372b1368224780fe9a6fe7154bb1f92a. `Fuente: Notion/Tareas`
 
 ## Esta semana
 - [ ] Crear requerimiento meta robots. `Fuente: Recordatorios`
 - [ ] Crear requerimiento url canonical para familias desde sphinx. `Fuente: Recordatorios`
-- [ ] Actualizar requerimiento. `Fuente: Recordatorios`
+- [x] Actualizar requerimiento. `Fuente: Recordatorios`
 - [ ] Bajar al requerimiento de cupones los acuerdos del refinamiento y dejar trazabilidad en la issue. `Fuente: Bitacora [[bitacora/inbox/ain/junio/04-06-2026|04-06-2026]], Notion/Reuniones`
 - [ ] Dar seguimiento a la epic `#161` de Core Web Vitals y priorizar ejecucion de las HDUs `#162`, `#163`, `#164`, `#165` y `#166`. `Fuente: Bitacora [[bitacora/inbox/ain/junio/04-06-2026|04-06-2026]], docs/planes-issues/2026-06-04-epic-core-web-vitals.md`
 - [ ] Agregar un monitor de la pdp que revise si la tabulacion tiene o no. `Fuente: Recordatorios`
 - [ ] Agregar al backlog todos los pasos que se han hecho al monitor ecommerce. `Fuente: Recordatorios`
 - [ ] Agregar al backlog todos los pasos que se han hecho del monitor mayoristas. `Fuente: Recordatorios`
 - [ ] Preparar la PPT final y cerrar la bajada operativa del flujo de tabulaciones para PMs no tecnicos. `Fuente: Bitacora [[bitacora/inbox/ain/junio/08-06-2026|08-06-2026]] y [[bitacora/inbox/ain/junio/09-06-2026|09-06-2026]]`
+- [ ] Actualizar diseño `adere.so`. `Fuente: Recordatorios`
+- [ ] Actualizar landing `asesórate online`. `Fuente: Recordatorios`
 
 ## Proxima semana
 - [ ] Aplicar correcciones sitemap. `Fuente: Recordatorios, Notion/Reuniones`
 - [ ] Crear requerimiento sitemap automatico. `Fuente: Recordatorios`
 - [ ] Hacer QA al desarrollo de separacion de usuario. `Fuente: Conversacion actual`
-- [ ] Hacer QA al cambio de bodegas de exhibicion en tiendas, validando que el stock de exhibicion se sume al stock visible en la web. `Fuente: Recordatorios, Bitacora [[bitacora/inbox/ain/junio/03-06-2026|03-06-2026]], Notion/Reuniones/bodegas Vitrinas`
+- [ ] Hacer QA al cambio de bodegas de exhibicion en tiendas, validando que el stock de exhibicion se sume al stock visible en la web. `Fuente: Recordatorios, Bitacora [[bitacora/inbox/ain/junio/03-06-2026|03-06-2026]], Bitacora [[bitacora/inbox/ain/junio/11-06-2026|11-06-2026]], Notion/Reuniones/bodegas Vitrinas`
 - [ ] Tener reunion el miercoles con Maria Jose, Alejandro y Pedro para revisar tabulaciones. `Fuente: Conversacion actual`
 
 ## Desarrollo / Implementacion
 - [ ] Agregar fetchpriority="high" en las landings. `Fuente: Recordatorios`
 - [ ] Mover script de retail rocket mas arriba. `Fuente: Recordatorios`
-- [ ] Corregir el schema en PDP para que muestre los mismos precios que la red y quede inyectado en el `head`, visible en el codigo fuente inicial para Google. `Fuente: Recordatorios, Bitacora [[bitacora/inbox/ain/junio/09-06-2026|09-06-2026]], coordinacion con Sebastian`
+- [ ] Confirmar con SEO y Sebastian si el schema actual de PDP, tomado por el script desde Vue, ya cumple el objetivo sin inyectarlo manualmente en el `head`; si no, bajar el ajuste exacto que falte. `Fuente: Recordatorios, Bitacora [[bitacora/inbox/ain/junio/09-06-2026|09-06-2026]], Bitacora [[bitacora/inbox/ain/junio/12-06-2026|12-06-2026]], coordinacion con Sebastian`
 - [ ] Cambiar la imagen de 500 a la 1000 en la galeria y agregar alt y title a las imagenes. `Fuente: Recordatorios`
 - [ ] Ver si podemos mandar el nombre del usuario del formulario de envio. `Fuente: Recordatorios`
 - [ ] Revisar en la api de los productos cuantos H1 hay en la pdp. `Fuente: Recordatorios, Notion/Reuniones`
@@ -87,18 +98,20 @@
 - [ ] Generar script para monitorear los alts y los titles de las pdp. `Fuente: Recordatorios`
 - [ ] Tengo que hacer un script para sacar el numero de id que le falta alt y title. `Fuente: Recordatorios`
 - [ ] Averiguar si podemos actualizar el feed solo con los cambios para que el run sea mas corto. `Fuente: Recordatorios`
+- [ ] Actualizar `pcf-sync-feed` de `Node.js 20` a `Node.js 24` antes del `16-06-2026` por deprecacion de GitHub Actions. `Fuente: Bitacora [[bitacora/inbox/ain/junio/12-06-2026|12-06-2026]]`
 - [ ] Dar seguimiento al PR `monitoring-ecommerce-web#19` para validar los runs individuales por monitor. `Fuente: Conversacion actual, GitHub`
 - [ ] Incorporar el despliegue del monitor de Rutpay al seguimiento de monitores ecommerce. `Fuente: Bitacora [[bitacora/inbox/ain/junio/08-06-2026|08-06-2026]], GitHub`
 
 ## Requerimientos / Definicion
 - [ ] Crear requerimiento ordenamiento de paginas de categorias. `Fuente: Recordatorios`
-- [ ] Revisar, refinar y crear requerimiento `same day`, partiendo por pedir presentacion del proyecto. `Fuente: Recordatorios, Notion/Same day`
+- [ ] Revisar, refinar y crear requerimiento `same day`, partiendo por pedir presentacion del proyecto y responder a Alejandro Borchers si corresponde dar OK para paso a produccion tras la fase de pruebas logisticas, copiando a Maria Jose. `Fuente: Recordatorios, Notion/Same day, Bitacora [[bitacora/inbox/ain/junio/12-06-2026|12-06-2026]]`
 - [ ] Revisar, refinar y crear requerimiento de retiro en centro de distribucion de curriers (`Starken`, `Chilexpress`, `Bluexpress`, etc.). `Fuente: Conversacion actual; pendiente de bajar a Recordatorios o Notion`
 - [ ] Crear requerimiento para implementar nuevos carruseles de Retail Rocket en home, incluyendo solicitud de diseno, QA e implementacion. `Fuente: Recordatorios`
 - [ ] Crear requerimiento para arreglar el menu. `Fuente: Recordatorios`
 - [ ] Crear requerimiento para arreglar el menu (desktop). `Fuente: Recordatorios`
 - [ ] Crear requerimiento para arreglar el menu (mobile). `Fuente: Recordatorios`
 - [ ] Crear requerimiento para arreglar los filtros (que se puedan combinar). `Fuente: Recordatorios`
+- [ ] Crear requerimiento para corregir el tamano del slider del home y evitar banners pixelados. `Fuente: Recordatorios`
 - [ ] Crear tarjeta para corregir dimensiones del logo mobile navbar. `Fuente: Recordatorios`
 - [ ] Hay que hacer un requerimiento para que hayan faqs en la plp y faqs en las pdp. `Fuente: Recordatorios`
 - [ ] Se quiero incluirle FAQs a los productos (desde modyo o desde sphinx). `Fuente: Recordatorios`
@@ -108,6 +121,7 @@
 - [ ] Hablar con la majo sobre las cuentas de copilot. `Fuente: Recordatorios`
 - [ ] Hablar con Nicolas de b2b del formulario. `Fuente: Recordatorios`
 - [ ] Hablar sobre los monitores pasarlos a PCF. `Fuente: Recordatorios`
+- [ ] Retomar el lunes la revision del evento `purchase` con Juan Pablo Novoa y Romina Cruz, reagendada por corte de luz, para revisar correctamente el registro de compras en BD. `Fuente: Bitacora [[bitacora/inbox/ain/junio/12-06-2026|12-06-2026]]`
 - [ ] Hablar con Molina y Nuno para alinear el footer de los correos promocionales con el diseno vigente del eCommerce. `Fuente: Bitacora [[bitacora/inbox/ain/junio/09-06-2026|09-06-2026]], Reunion iniciativas / cupones`
 - [ ] Dar seguimiento a Sebastian sobre [issue 149](https://github.com/acortespcf/proyectos-ecommerce/issues/149), [issue 155](https://github.com/acortespcf/proyectos-ecommerce/issues/155) y landing del Dia del Padre. `Fuente: Bitacora [[bitacora/inbox/ain/junio/03-06-2026|03-06-2026]]`
 - [ ] El lunes vamos a hacer una lista de las fechas en las que necesitamos los contenidos para las landings. `Fuente: Recordatorios`
@@ -118,6 +132,7 @@
 ## Investigacion / Evaluacion
 - [ ] Hacer QA de usuario web. `Fuente: Recordatorios`
 - [ ] Hacer un benchmark de como nos afecta el tiempo de despacho / retiro. `Fuente: Recordatorios`
+- [ ] Evaluar si conviene apagar la cuenta de prueba `Google Merchant Center TEST API` y documentar el procedimiento correcto para hacerlo. `Fuente: Bitacora [[bitacora/inbox/ain/junio/12-06-2026|12-06-2026]]`
 - [ ] Preguntar si podemos cambiar formato de imagenes a WEBP sin quitarles el fondo aun (fase 1). `Fuente: Recordatorios`
 - [ ] PEDIR a modyo comprimir los js y css que cargan en el sitio al comienzo. `Fuente: Recordatorios`
 
@@ -130,22 +145,30 @@
 - Conviene ir moviendo tareas cerradas fuera de este archivo o marcarlas como completadas.
 - `Crear tarjeta cupón (Ain)` aparece `Completado` en Notion al 03-06-2026.
 - La revision de correos ya se bajo a los issues `158`, `159` y `160`, agrupados en el milestone `#4`.
-- La bitacora del 03-06-2026 tambien confirma seguimiento activo a `issue 149`, `issue 155`, reunion de cupon de descuento, QA de cuarta bodega, completar la informacion de las issues de correos y probar tabulaciones con notebooks.
-- Ultimo conteo conocido en Recordatorios `pcfactory`: `38` abiertos.
+- La bitacora [[bitacora/inbox/ain/junio/03-06-2026|03-06-2026]] tambien confirma seguimiento activo a `issue 149`, `issue 155`, reunion de cupon de descuento, QA de cuarta bodega, completar la informacion de las issues de correos y probar tabulaciones con notebooks.
+- En la sesion del `10-06-2026` el ultimo conteo conocido en Recordatorios `pcfactory` era `38` abiertos.
 - En Recordatorios seguia abierto `Agendar reunion para revisar requerimiento Cupones`; conviene revalidar si ese rastro ya se puede cerrar con el avance consolidado en bitacora.
-- En la bitacora del 04-06-2026 quedaron resueltos la actualizacion de la issue de cupones y los mensajes de API para front; la bitacora del 08-06-2026 suma que las maquetas ya fueron revisadas.
-- En esta sesion si hubo acceso directo a Recordatorios y se revalido el conteo en `38` abiertos.
+- En la bitacora [[bitacora/inbox/ain/junio/04-06-2026|04-06-2026]] quedaron resueltos la actualizacion de la issue de cupones y los mensajes de API para front; la bitacora [[bitacora/inbox/ain/junio/08-06-2026|08-06-2026]] suma que las maquetas ya fueron revisadas.
+- En la sesion del `10-06-2026` si hubo acceso directo a Recordatorios y se revalido el conteo en `38` abiertos.
 - En esta sesion la planilla de seguimiento devolvio `401`, por lo que falta revalidar ese acceso antes de contrastarla de nuevo.
 - La revision de cambios de hoy en `/Users/ain/Code` mostro actividad concreta en `pcf/chile/urls`, `pcf/herramientas_seo/tabulaciones`, `pcf/herramientas_seo/corewebvitals` y `pcf/proyectos-ecommerce/docs/planes-issues`.
 - Queda registrada para la proxima semana una reunion ya agendada con Maria Jose, Alejandro y Pedro para revisar tabulaciones.
-- La bitacora del `08-06-2026` confirma como cierres operativos que ya se pidio la planilla de Ale, ya se coordino la prueba en vivo con Juan Pablo y ya se revisaron las maquetas de cupones.
-- La bitacora del `08-06-2026` agrega nuevos frentes: bloqueo critico de Webpay, despliegue pendiente de Rutpay, apoyo a sitemap con Alejandro y maxima prioridad a tabulaciones automaticas antes del viernes.
-- La bitacora del `08-06-2026` tambien deja registrado que ya se trabajo un plan para que PMs generen tabulaciones de sus familias y que tocaba avanzar la implementacion, hoy ya aterrizada en un flujo con salida para Google Sheets.
-- La bitacora del `09-06-2026` suma seguimiento a performance de Loadstone (`v0.2`), validacion de letra chica de cupones, alineacion de footers con marketing, monitoreo operativo de productos raros en populares y coordinacion con Sebastian sobre PAP, bugs de filtros, FAQ y schema SEO.
+- La bitacora [[bitacora/inbox/ain/junio/08-06-2026|08-06-2026]] confirma como cierres operativos que ya se pidio la planilla de Ale, ya se coordino la prueba en vivo con Juan Pablo y ya se revisaron las maquetas de cupones.
+- La bitacora [[bitacora/inbox/ain/junio/08-06-2026|08-06-2026]] agrega nuevos frentes: bloqueo critico de Webpay, despliegue pendiente de Rutpay, apoyo a sitemap con Alejandro y maxima prioridad a tabulaciones automaticas antes del viernes.
+- La bitacora [[bitacora/inbox/ain/junio/08-06-2026|08-06-2026]] tambien deja registrado que ya se trabajo un plan para que PMs generen tabulaciones de sus familias y que tocaba avanzar la implementacion, hoy ya aterrizada en un flujo con salida para Google Sheets.
+- La bitacora [[bitacora/inbox/ain/junio/09-06-2026|09-06-2026]] suma seguimiento a performance de Loadstone (`v0.2`), validacion de letra chica de cupones, alineacion de footers con marketing, monitoreo operativo de productos raros en populares y coordinacion con Sebastian sobre PAP, bugs de filtros, FAQ y schema SEO.
 - La revision de Notion en `PCF` confirmo que `Modernizacion del checkout` sigue `Por iniciar`, pero por definicion actual no se tomara antes de `Q3` y podria moverse incluso al ultimo quarter del ano; se mantiene solo como seguimiento de largo plazo.
-- La revision de Notion en `PCF` confirmo que `Mejoras visuales y de seo PLP y PDP` sigue `Por iniciar` y mantiene prioridad `Alta`.
+- La revision de Notion en `PCF` del `11-06-2026` confirmo que `Mejoras visuales y de seo PLP y PDP` ya paso a `En curso` y mantiene prioridad `Alta`.
 - La reunion `bodegas Vitrinas` en Notion confirma que el cambio esperado es sumar stock de exhibicion al stock visible en la web.
 - La reunion `sitemap` en Notion mantiene vigente la necesidad de planilla/script para landings, orden de URLs y uso de `lastmod`, `changefreq` y `priority`.
 - La reunion `Same day` en Notion confirma que el alcance inicial seria despacho same day en Santiago desde CD, con horario de corte y fuera de mayoristas; falta bajarlo a requerimiento formal.
 - La reunion `Refinamiento ecommerce - Cupones y Ley de Datos` confirma como pendientes la revalidacion del stock al pago para cupones y la centralizacion de consentimientos en un panel de privacidad.
-- En la sesion del `10-06-2026` Recordatorios `pcfactory` siguio con `38` abiertos y la planilla de seguimiento volvio a responder `401`.
+- La reunion `Revision Proyectos Iniciativas + Cupones` del `09-06-2026` deja vigentes como pendientes validar letra chica de cupones, alinear el footer de correos con Molina y Nuno, y seguir la limpieza de sitemap / URLs antiguas.
+- La bitacora [[bitacora/inbox/ain/junio/11-06-2026|11-06-2026]] agrega como pendientes nuevos revisar el `UAT Proyecto Bodega Exhibicion`, corregir la diferencia del CTA del paso 2 del checkout entre desktop y mobile, y seguir la salida de la landing Imbatible con banners en `1792x490 px`.
+- En la sesion del `11-06-2026` se revalido acceso directo a Recordatorios `pcfactory` con `43` abiertos; la planilla de seguimiento sigue respondiendo `401` y en esta sesion no hubo lector directo de Notion, por lo que el contexto de `Tareas` y `Reuniones` se mantiene desde las ultimas capturas ya consolidadas en este archivo.
+- El recordatorio `Agendar reunion para revisar requerimiento Cupones` sigue abierto en Recordatorios, pero por bitacora y notas locales parece rastro desactualizado del refinamiento ya realizado; conviene decidir si se cierra o se reemplaza por un siguiente paso mas concreto.
+- La bitacora [[bitacora/inbox/ain/junio/12-06-2026|12-06-2026]] deja registrado que la validacion tecnica con Sebastian sobre `schema/head` en PDP cambio el supuesto inicial: por ahora no se ve necesario mover el schema al `head` si el script ya lo toma desde Vue; falta validar si SEO o Google necesitan algo adicional.
+- La reunion de revision del evento `purchase` con Juan Pablo y Romina no se realizo el `12-06-2026` por corte de luz y quedo reagendada para el lunes.
+- Los banners de semana `W25` quedaron listos el `12-06-2026`, incluyendo correccion de precios en `SUB11`.
+- La bitacora [[bitacora/inbox/ain/junio/12-06-2026|12-06-2026]] agrega que `pcf-sync-feed #57` corrio exitosamente de madrugada, pero queda pendiente migrar sus actions de `Node.js 20` a `24` antes del `16-06-2026`.
+- En la manana del `12-06-2026`, Alejandro Borchers reporto avance de `Same day` a fase de pruebas logisticas y quedo pendiente responder si se dara OK para paso a produccion, copiando a Maria Jose.
