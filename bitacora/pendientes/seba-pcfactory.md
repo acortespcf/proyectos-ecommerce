@@ -3,9 +3,9 @@
 ## Estado
 - Responsable: `seba`
 - Fuente principal: bitacoras en `bitacora/inbox/seba/`
-- Ultima actualizacion: `2026-06-11`
-- Ultima bitacora consolidada: `2026-06-11`
-- Cobertura revisada: `8` bitacoras entre `2026-05-22` y `2026-06-11`
+- Ultima actualizacion: `2026-06-15`
+- Ultima bitacora consolidada: `2026-06-15`
+- Cobertura revisada: `9` bitacoras entre `2026-05-22` y `2026-06-15`
 
 ## Criterio de uso
 - Este archivo consolida pendientes activos y clasificados de Sebastian.
@@ -22,6 +22,7 @@
 - [[bitacora/inbox/seba/junio/04-06-2026]]
 - [[bitacora/inbox/seba/junio/11-06-2026]]
 - [[bitacora/inbox/seba/junio/10-06-2026]]
+- [[bitacora/inbox/seba/junio/15-06-2026]]
 - [[bitacora/informes/2026-06-02-al-2026-06-07-desarrollo-ecommerce]]
 
 ## Criticos
@@ -29,10 +30,11 @@
 - [ ] Ejecutar despues del freeze la correccion visual del mensaje de error del input de RUT para que se muestre en color rojo. `Fuente: Bitacora [[bitacora/inbox/seba/junio/04-06-2026|04-06-2026]]`
 
 ## Hoy
-- [ ] Revisar banner categorias precio producto: que no muestre en el front el precio referencial si el endpoint no lo trae. `Fuente: Bitacora [[bitacora/inbox/seba/junio/10-06-2026|10-06-2026]]`
-- [ ] Agregar iconos al menu de suministros impresora. `Fuente: Bitacora [[bitacora/inbox/seba/junio/10-06-2026|10-06-2026]]`
+- [ ] Fix widget Listado de productos: si un mismo id aparece 2 veces en la entrada de modyo, mostrar solo una vez respetando el orden. `Fuente: Bitacora [[bitacora/inbox/seba/junio/15-06-2026|15-06-2026]]`
 - [ ] Dar seguimiento al OK comercial de `Intel Ultra` que debe gestionar Pedro antes del `19-06-2026`. `Fuente: Bitacora [[bitacora/inbox/seba/junio/11-06-2026|11-06-2026]]`
 - [ ] Corregir alturas de banners mobile y definir ancho fijo (`containers`) para los banners. `Fuente: Bitacora [[bitacora/inbox/seba/junio/11-06-2026|11-06-2026]]`
+- [ ] Revisar banner categorias precio producto: que no muestre en el front el precio referencial si el endpoint no lo trae. `Fuente: Bitacora [[bitacora/inbox/seba/junio/10-06-2026|10-06-2026]]`
+- [ ] Agregar iconos al menu de suministros impresora. `Fuente: Bitacora [[bitacora/inbox/seba/junio/10-06-2026|10-06-2026]]`
 - [ ] Actualizar guias desactualizadas de consejos y tips tecnologicos. `Fuente: Bitacora [[bitacora/inbox/seba/junio/11-06-2026|11-06-2026]]`
 
 ## Esta semana
@@ -41,6 +43,9 @@
 - [ ] Dar seguimiento operativo a la salida de Dia del Padre, incluyendo cambios de grafica, metas, contenido y productos disponibles. `Fuente: Bitacora [[bitacora/inbox/seba/junio/04-06-2026|04-06-2026]]`
 - [ ] Dar seguimiento operativo a la campana `Papa mundialero` y a su presentacion en sitio hasta el `28-06-2026`. `Fuente: Bitacora [[bitacora/inbox/seba/junio/04-06-2026|04-06-2026]]`
 - [ ] Mantener seguimiento a la implementacion final de `Intel Ultra`, ya cerrada tecnicamente pero pendiente de definicion comercial antes del `19-06-2026`. `Fuente: Bitacora [[bitacora/inbox/seba/junio/11-06-2026|11-06-2026]]`
+- [ ] Coordinar paso a produccion de `#155` y `#148` esta semana. `Fuente: Bitacora [[bitacora/inbox/seba/junio/15-06-2026|15-06-2026]]`
+- [ ] Continuar desarrollo del modulo de cupones `#134`. `Fuente: Bitacora [[bitacora/inbox/seba/junio/15-06-2026|15-06-2026]]`
+- [ ] Preparar campana de Vacaciones de Invierno para la proxima semana. `Fuente: Bitacora [[bitacora/inbox/seba/junio/15-06-2026|15-06-2026]]`
 
 ## Desarrollo / Implementacion
 - [ ] Mantener trazabilidad de las definiciones funcionales de cupones para que la bajada a desarrollo quede clara. `Fuente: Bitacora [[bitacora/inbox/seba/junio/04-06-2026|04-06-2026]]`
@@ -58,3 +63,4 @@
 - Hay pendientes historicos de mayo que no se consolidaron como activos porque las bitacoras de junio no confirman si siguen abiertos o ya fueron resueltos.
 - La mayor parte del foco reciente de Sebastian aparece concentrado en cupones, ajustes de checkout y operacion de campanas `Cyber`, `Dia del Padre` y `Papa mundialero`.
 - La bitacora del `11-06-2026` deja registrado el cierre tecnico de `Intel Ultra` con meta tags SEO aplicadas y un bloqueo comercial pendiente de gestion con Pedro.
+- La bitacora del `15-06-2026` registra avances: diseno de landings Intel Ultra terminado (pendiente feedback comercial), ajustes finales de `#155` y `#148` para pase a produccion, inicio de desarrollo de cupones `#134`, y coordinacion de campanas en reunion Operacion Ecommerce (Intel Ultra, Dia del Padre, Vacaciones de Invierno). Se agrega como pendiente nuevo el fix al widget de Listado de productos por ids duplicados en entrada modyo.
