@@ -1,4 +1,4 @@
-# Informe semanal desarrollo eCommerce
+	# Informe semanal desarrollo eCommerce
 
 ## Periodo
 - Semana analizada: `2026-06-08` a `2026-06-14`
