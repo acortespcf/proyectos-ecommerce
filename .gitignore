@@ -1,2 +1,9 @@
 .github/workflows/sprint-rollover.yml
 .DS_Store
+.agents/
+.opencode/
+.claude/
+.cursor/
+.aider/
+skills-lock.json
+.obsidian/workspace.json
