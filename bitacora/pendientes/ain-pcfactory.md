@@ -4,7 +4,7 @@
 ## Estado
 - Responsable: `ain`
 - Fuente principal: lista `pcfactory` en Recordatorios
-- Ultima actualizacion: `2026-06-12`
+- Ultima actualizacion: `2026-07-02`
 - Ultimo conteo conocido en Recordatorios: `43`
 
 ## Criterio de uso
@@ -26,10 +26,24 @@
 - [[bitacora/inbox/ain/junio/10-06-2026]]
 - [[bitacora/inbox/ain/junio/11-06-2026]]
 - [[bitacora/inbox/ain/junio/12-06-2026]]
+- [[bitacora/inbox/ain/junio/15-06-2026]]
+- [[bitacora/inbox/ain/junio/16-06-2026]]
+- [[bitacora/inbox/ain/junio/17-06-2026]]
+- [[bitacora/inbox/ain/junio/18-06-2026]]
+- [[bitacora/inbox/ain/junio/19-06-2026]]
+- [[bitacora/inbox/ain/junio/22-06-2026]]
+- [[bitacora/inbox/ain/junio/23-06-2026]]
+- [[bitacora/inbox/ain/junio/24-06-2026]]
+- [[bitacora/inbox/ain/junio/25-06-2026]]
+- [[bitacora/inbox/ain/junio/26-06-2026]]
+- [[bitacora/inbox/ain/junio/30-06-2026]]
+- [[bitacora/inbox/ain/julio/01-07-2026]]
+- [[bitacora/inbox/ain/julio/02-07-2026]]
 - [[bitacora/informes/2026-06-01-al-2026-06-07-desarrollo-ecommerce]]
 
 ## Críticos
 - [x] Destrabar el error critico de Webpay: el token de Transbank no se registra en la tabla de pedidos y la compra se anula automaticamente. `Fuente: Bitacora [[bitacora/inbox/ain/junio/08-06-2026|08-06-2026]]`
+- [x] Agregar bitacoras faltantes: 17, 18, 19, 22, 23, 24, 25, 26 y 30 de junio; 1 y 2 de julio. `Fuente: Conversacion actual, bitacoras creadas`
 - [ ] Prioridad máxima: cerrar un flujo operable de tabulaciones automaticas para PMs no técnicos, incluyendo implementación, salida en Google Sheets y material explicativo sin terminal ni agentes de IA. `Fuente: Bitacora [[bitacora/inbox/ain/junio/08-06-2026|08-06-2026]], Notion/Analisis Tabulaciones, Bitacora [[bitacora/inbox/ain/junio/09-06-2026|09-06-2026]]`
 - [x] Coordinar el paso a producción y seguimiento operativo del monitor de payments con Rutpay `monitoring-ecommerce-web#20`, ya mergeado. `Fuente: Bitacora [[bitacora/inbox/ain/junio/08-06-2026|08-06-2026]], GitHub, revision repos 09-06-2026`
 - [ ] Dar seguimiento al milestone de correos 
@@ -44,6 +58,9 @@
 
 
 ## Hoy
+- [ ] Validar con Alan los endpoints de cupones, especialmente subtotal, voucher, errores 500 y reglas JWT. `Fuente: Bitacora [[bitacora/inbox/ain/julio/01-07-2026|01-07-2026]], Notion/Plan de pruebas cupones`
+- [ ] Cerrar las reglas funcionales de cupones: aplicacion por ID/producto, mezcla de cupones en un mismo producto y comportamiento tipo aporte. `Fuente: Notion/Consultas Cupones, Bitacora [[bitacora/inbox/ain/julio/02-07-2026|02-07-2026]]`
+- [ ] Validar el plan de pruebas Same Day con logistica/stakeholders, cubriendo comunas, horario de corte, stock CD, monto maximo, tercero, transferencias multiples, mayoristas y productos digitales. `Fuente: Notion/Plan de pruebas sameday, Bitacora [[bitacora/inbox/ain/julio/02-07-2026|02-07-2026]]`
 - [ ] Revisar el `UAT Proyecto Bodega Exhibicion` en `sphinx12.pcfactory.cl`, cubriendo sub-bodegas por tienda, permisos, priorizacion de stock, integracion web y alertas. `Fuente: Bitacora [[bitacora/inbox/ain/junio/11-06-2026|11-06-2026]], correo de Angelica Lugo`
 - [ ] Implementar o coordinar el ajuste del CTA del paso 2 del checkout para unificar desktop y mobile, alineado con el frente de cupones. `Fuente: Bitacora [[bitacora/inbox/ain/junio/11-06-2026|11-06-2026]], coordinacion con Mariana`
 - [ ] Dar seguimiento operativo a la landing Imbatible, validando banners en `1792x490 px` y el cierre comprometido para el domingo a las `23:59`. `Fuente: Bitacora [[bitacora/inbox/ain/junio/11-06-2026|11-06-2026]]`
@@ -60,8 +77,12 @@
 
 ## Notion / Tareas activas
 - [ ] `Mejoras visuales y de seo PLP y PDP` ya figura `Alta` y `En curso`; falta decidir si entra al foco activo inmediato y como se coordina con `#149`, `#155` y cupones - Notion: https://app.notion.com/p/372b1368224780fe9a6fe7154bb1f92a. `Fuente: Notion/Tareas`
+- [ ] Revisar continuidad de `W 26` y `Checklist invierno`, ambas activas y de prioridad `Alta` en `Tareas PCF`. `Fuente: Notion/Tareas PCF, revision 02-07-2026`
 
 ## Esta semana
+- [ ] Realizar informe del QA de login. `Fuente: Conversacion actual`
+- [ ] Realizar creacion de plan de pruebas para cupones. `Fuente: Conversacion actual`
+- [ ] Realizar QA de fotos `webp`. `Fuente: Conversacion actual`
 - [ ] Crear requerimiento meta robots. `Fuente: Recordatorios`
 - [ ] Crear requerimiento url canonical para familias desde sphinx. `Fuente: Recordatorios`
 - [x] Actualizar requerimiento. `Fuente: Recordatorios`
@@ -141,6 +162,10 @@
 - [ ] Hacer un listado de planillas que tenemos y ordenarlas (unificarlas). `Fuente: Recordatorios`
 
 ## Notas
+- En la revision de Notion del `02-07-2026` se confirmaron documentos nuevos/activos: `Plan de pruebas cupones`, `Consultas Cupones` y `Plan de pruebas sameday`.
+- En la revision de repositorios en `/Users/ain/Code` se encontro actividad relevante en `pcfactory-widgets-ec-cart` entre el `22-06-2026` y `30-06-2026`, con foco en input/control de cupones, cupones aplicados, remocion y disclaimers mobile.
+- En `monitoring-ecommerce-web` se confirmo actividad entre el `22-06-2026` y `26-06-2026`, incluyendo preservacion de `categories-status.txt` en despliegues parciales y reduccion de publicacion de assets del dashboard de banners.
+- `pcfactory-widgets-ec-checkout` tiene cambios locales en `src/store/getters.js` al `02-07-2026`; no se modifico desde esta actualizacion de bitacora.
 - Hay posible duplicidad en requerimientos de menu: general, desktop y mobile.
 - Conviene ir moviendo tareas cerradas fuera de este archivo o marcarlas como completadas.
 - `Crear tarjeta cupón (Ain)` aparece `Completado` en Notion al 03-06-2026.
