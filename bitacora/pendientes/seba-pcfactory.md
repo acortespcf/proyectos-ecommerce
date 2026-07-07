@@ -3,9 +3,9 @@
 ## Estado
 - Responsable: `seba`
 - Fuente principal: bitacoras en `bitacora/inbox/seba/`
-- Ultima actualizacion: `2026-06-22`
-- Ultima bitacora consolidada: `2026-06-19`
-- Cobertura revisada: `16` bitacoras entre `2026-05-22` y `2026-06-19`
+- Ultima actualizacion: `2026-07-06`
+- Ultima bitacora consolidada: `2026-07-06`
+- Cobertura revisada: `17` bitacoras entre `2026-05-22` y `2026-07-06`
 
 ## Criterio de uso
 - Este archivo consolida pendientes activos y clasificados de Sebastian.
@@ -31,6 +31,7 @@
 - [[bitacora/inbox/seba/junio/17-06-2026]]
 - [[bitacora/inbox/seba/junio/18-06-2026]]
 - [[bitacora/inbox/seba/junio/19-06-2026]]
+- [[bitacora/inbox/seba/julio/06-07-2026]]
 - [[bitacora/informes/2026-06-01-al-2026-06-07-desarrollo-ecommerce]]
 
 ## Criticos
@@ -49,6 +50,7 @@
 - [ ] Agregar iconos al menu de suministros impresora. `Fuente: Bitacora [[bitacora/inbox/seba/junio/10-06-2026|10-06-2026]]`
 - [ ] Actualizar guias desactualizadas de consejos y tips tecnologicos. `Fuente: Bitacora [[bitacora/inbox/seba/junio/11-06-2026|11-06-2026]]`
 - [ ] Gestionar la reunion para definir requisitos de pedidos de landings de campanas y contenidos. `Fuente: Bitacora [[bitacora/inbox/seba/junio/19-06-2026|19-06-2026]]`
+- [ ] Dejar lista dentro del plazo la carga de productos de `Semana de Computacion` para la salida del `13-07-2026`. `Fuente: Bitacora [[bitacora/inbox/seba/julio/06-07-2026|06-07-2026]]`
 
 ## Esta semana
 - [x] Continuar con la campana Intel Pro: completar los 3 PDFs restantes del landing de ventajas de procesadores. `Fuente: Bitacora [[bitacora/inbox/seba/junio/10-06-2026|10-06-2026]]`
@@ -57,7 +59,8 @@
 - [ ] Dar seguimiento operativo a la campana `Papa mundialero` y a su presentacion en sitio hasta el `28-06-2026`. `Fuente: Bitacora [[bitacora/inbox/seba/junio/04-06-2026|04-06-2026]]`
 - [ ] Mantener seguimiento a la implementacion final de `Intel Ultra`, ya cerrada tecnicamente pero pendiente de definicion comercial antes del `19-06-2026`. `Fuente: Bitacora [[bitacora/inbox/seba/junio/11-06-2026|11-06-2026]]`
 - [x] Ejecutar paso a produccion de `#148` y `#155` correctamente. `Fuente: Bitacora [[bitacora/inbox/seba/junio/17-06-2026|17-06-2026]]`
-- [ ] Continuar desarrollo del modulo de cupones `#134`. `Fuente: Bitacora [[bitacora/inbox/seba/junio/15-06-2026|15-06-2026]]`
+- [ ] Ejecutar y acompanar las pruebas funcionales completas del flujo de cupones `#134`, ya listo por frontend. `Fuente: Bitacora [[bitacora/inbox/seba/julio/06-07-2026|06-07-2026]]`
+- [ ] Mantener seguimiento a los ajustes funcionales adicionales solicitados para el mantenedor de cupones, incluyendo el ingreso de aportes para desglosar descuentos. `Fuente: Bitacora [[bitacora/inbox/seba/julio/06-07-2026|06-07-2026]]`
 - [ ] Preparar campana de Vacaciones de Invierno para la proxima semana. `Fuente: Bitacora [[bitacora/inbox/seba/junio/15-06-2026|15-06-2026]]`
 - [ ] Dar seguimiento a la salida de `Vacaciones de Invierno` planificada para el `22-06`. `Fuente: Bitacora [[bitacora/inbox/seba/junio/18-06-2026|18-06-2026]]`
 - [ ] Dar seguimiento a la implementacion de la campana `solo por pocas horas` coordinada para el miercoles. `Fuente: Bitacora [[bitacora/inbox/seba/junio/16-06-2026|16-06-2026]]`
@@ -77,6 +80,8 @@
 - [ ] Mantener seguimiento de acuerdos de cupones entre e-Commerce, Operaciones, Comercial y TI para evitar vacios entre definicion y ejecucion. `Fuente: Bitacoras [[bitacora/inbox/seba/junio/03-06-2026|03-06-2026]] y [[bitacora/inbox/seba/junio/04-06-2026|04-06-2026]]`
 - [ ] Sostener el registro diario en bitacora para ir cerrando o actualizando estos pendientes con mejor evidencia. `Fuente: Bitacora [[bitacora/inbox/seba/junio/03-06-2026|03-06-2026]]`
 - [ ] Revisar el requerimiento de `Subtel` y aterrizar los proximos pasos comprometidos para el lunes. `Fuente: Bitacora [[bitacora/inbox/seba/junio/19-06-2026|19-06-2026]]`
+- [ ] Dar seguimiento al refinamiento de la campana de `Intel` por parte de Operaciones para tomar luego su implementacion en desarrollo junto a `Ain`. `Fuente: Bitacora [[bitacora/inbox/seba/julio/06-07-2026|06-07-2026]]`
+- [ ] Dar seguimiento al requerimiento `B2B` del sitio de empresas y tomar su implementacion una vez que el equipo `B2B` apruebe la maqueta enviada. `Fuente: Bitacora [[bitacora/inbox/seba/julio/06-07-2026|06-07-2026]]`
 
 ## Bloqueos
 - [ ] Resolver el bloqueo funcional del requerimiento `QR Subtel PCF`, definiendo como se expondran desde `Sphinx` los datos para construir el catalogo de productos regulados por `Subtel`. `Fuente: Bitacora [[bitacora/inbox/seba/junio/17-06-2026|17-06-2026]]`
@@ -93,3 +98,5 @@
 - La bitacora del `17-06-2026` suma cuatro frentes relevantes: levantamiento del requerimiento `QR Subtel PCF`, continuidad tecnica de cupones `#134` con pruebas locales exitosas del mensaje `Cupon invalido.`, debugging de `Mini Totems Peru` en `Modyo`, y confirmacion del paso a produccion correcto de `#148` y `#155`.
 - La bitacora del `18-06-2026` refuerza tres lineas activas: continuidad de cupones `#134`, preparacion operativa de `Vacaciones de Invierno` para el `22-06`, y coordinacion anticipada de la campana `Intel Gamer` del `06-07`.
 - La bitacora del `19-06-2026` agrega un frente nuevo de estandarizacion tecnica con un widget reutilizable de cards para landings ya en produccion, pendiente de migracion al resto de landings; tambien instala como necesidad la adopcion de testing y la replicacion previa del bug de clonacion de espacios en `Modyo` antes de escalarlo a soporte.
+- La bitacora del `06-07-2026` mueve el foco de cupones `#134` desde desarrollo frontend a pruebas funcionales end-to-end, y suma coordinacion comercial por ajustes funcionales del mantenedor.
+- La misma jornada agrega tres frentes operativos nuevos: carga de productos para `Semana de Computacion`, seguimiento al refinamiento de la campana de `Intel` previo a desarrollo, y espera de aprobacion `B2B` para tomar el cambio del sitio de empresas.
