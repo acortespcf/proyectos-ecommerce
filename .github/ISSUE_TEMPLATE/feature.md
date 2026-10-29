@@ -32,6 +32,24 @@ assignees: ''
 - [ ] 
 - [ ] 
 
+## 📏 Estimación (Story Points)
+<details>
+<summary>📏 <b>Guía rápida de Estimación (Story Points)</b></summary>
+
+| Puntos | Claridad | Dependencias | Esfuerzo neto | Acción en Sprint |
+| :---: | :--- | :--- | :---: | :--- |
+| **1 SP** | Todo claro | Ninguna | < 2 horas | Entra directo (Quick win) |
+| **2 SP** | Casi todo claro | Casi ninguna | ~Medio día | Entra directo |
+| **3 SP** | Conocimiento medio | Algunas | 1 a 2 días | Entra directo |
+| **5 SP** | Poca claridad previa | Pocas/moderadas | 3 a 4 días | Entra (Límite máximo recomendado) |
+| **8 SP** | Muy poca claridad | Múltiples | ~1 semana | ⚠️ Dividir si es posible |
+| **13 SP** | Incertidumbre total | Desconocidas | > 1 semana | ⛔ NO entra: Debe dividirse |
+
+> *Ver guía completa y cálculo de capacidad:* [docs/agile/estimacion-story-points.md](docs/agile/estimacion-story-points.md)
+</details>
+
+- **Estimate asignado:** [1 / 2 / 3 / 5 / 8]
+
 ## ✅ Impacto y ❌ Riesgos
 <!-- Impactos positivos, trade-offs y riesgos técnicos/funcionales -->
 
