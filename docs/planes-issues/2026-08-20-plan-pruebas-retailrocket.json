@@ -1,0 +1,236 @@
+{
+  "summary": {
+    "feature_name": "Validar optimizacion de rendimiento de carruseles Retail Rocket",
+    "description": "Plan de pruebas funcionales, de rendimiento y regresion para validar los cambios aplicados por Loadstone en bloques de test y posteriormente en los bloques originales de la home.",
+    "metrics": {
+      "Total Test Cases": 16,
+      "E2E Tests": 10,
+      "Regression Tests": 6,
+      "Coverage": "Criterios CA-01 a CA-06 cubiertos"
+    },
+    "distribution": {
+      "Positive Cases": 8,
+      "Negative Cases": 3,
+      "Edge Cases": 3,
+      "Regression Cases": 2
+    }
+  },
+  "e2e_tests": [
+    {
+      "id": "E2E-01",
+      "scenario": "Activar bloques de test sin bloques productivos",
+      "description": "Verificar aislamiento de los bloques de prueba informado por Loadstone.",
+      "preconditions": "Certificacion o sesion controlada; codigo de activacion disponible.",
+      "steps": "1. Abrir la home\n2. Ejecutar retailrocket.dev.developmentMode(true)\n3. Recargar la pagina\n4. Revisar bloques visibles y Network",
+      "expected": "Se muestran los bloques de test y no los bloques productivos equivalentes.",
+      "type": "Positive",
+      "priority": "High",
+      "status": "Not Started"
+    },
+    {
+      "id": "E2E-02",
+      "scenario": "No inicializar bloques fuera del viewport",
+      "description": "Validar el comportamiento lazy load durante la carga inicial sin scroll.",
+      "preconditions": "Modo test activo; DevTools Network abierto; cache documentada.",
+      "steps": "1. Empezar una captura HAR\n2. Cargar la home\n3. No hacer scroll\n4. Revisar solicitudes de bloques inferiores",
+      "expected": "Los bloques fuera del viewport no generan solicitudes de inicializacion antes del momento definido.",
+      "type": "Positive",
+      "priority": "High",
+      "status": "Not Started"
+    },
+    {
+      "id": "E2E-03",
+      "scenario": "Inicializar bloque al entrar al viewport",
+      "description": "Verificar que un bloque lazy carga contenido cuando el usuario se aproxima.",
+      "preconditions": "Bloque de test ubicado bajo el contenido inicial.",
+      "steps": "1. Cargar home sin scroll\n2. Desplazar progresivamente hasta el bloque\n3. Esperar la respuesta\n4. Revisar productos, imagenes y CTA",
+      "expected": "El bloque se inicializa oportunamente y muestra contenido completo sin quedar vacio.",
+      "type": "Positive",
+      "priority": "High",
+      "status": "Not Started"
+    },
+    {
+      "id": "E2E-04",
+      "scenario": "Navegacion con flechas",
+      "description": "Verificar avance y retroceso del carrusel.",
+      "preconditions": "Carrusel con varios productos visibles.",
+      "steps": "1. Hacer clic en flecha siguiente varias veces\n2. Hacer clic en flecha anterior\n3. Revisar contenido y layout",
+      "expected": "El carrusel navega sin saltos, superposiciones, bloqueos ni contenido vacio.",
+      "type": "Positive",
+      "priority": "High",
+      "status": "Not Started"
+    },
+    {
+      "id": "E2E-05",
+      "scenario": "Navegacion por swipe en mobile",
+      "description": "Verificar interaccion tactil en viewport mobile.",
+      "preconditions": "Chrome DevTools mobile o dispositivo mobile; carrusel visible.",
+      "steps": "1. Abrir la home en mobile\n2. Hacer swipe hacia adelante y atras\n3. Revisar que el touch no desplace incorrectamente la pagina",
+      "expected": "El carrusel responde al swipe y conserva su layout responsive.",
+      "type": "Positive",
+      "priority": "High",
+      "status": "Not Started"
+    },
+    {
+      "id": "E2E-06",
+      "scenario": "Abrir producto recomendado",
+      "description": "Validar el enlace desde una tarjeta de recomendacion.",
+      "preconditions": "Carrusel con productos validos.",
+      "steps": "1. Seleccionar una tarjeta\n2. Abrir el enlace\n3. Comparar producto, precio e identificador con la tarjeta",
+      "expected": "Se abre el PDP correcto y el contenido es consistente.",
+      "type": "Positive",
+      "priority": "High",
+      "status": "Not Started"
+    },
+    {
+      "id": "E2E-07",
+      "scenario": "Producto recomendado con data-product-id",
+      "description": "Validar carruseles que usan identificadores forzados.",
+      "preconditions": "Bloque de test configurado con data-product-id.",
+      "steps": "1. Cargar la home\n2. Inspeccionar el bloque y su identificador\n3. Interactuar con la tarjeta y CTA",
+      "expected": "La recomendacion corresponde al identificador y el CTA funciona.",
+      "type": "Edge Case",
+      "priority": "Medium",
+      "status": "Not Started"
+    },
+    {
+      "id": "PERF-01",
+      "scenario": "Comparar baseline y optimizada en carga fria",
+      "description": "Comparar requests y latencias con mismas condiciones de captura.",
+      "preconditions": "Mismo ambiente, viewport, navegador, red, bloques y cache deshabilitada.",
+      "steps": "1. Capturar baseline HAR\n2. Capturar optimizada HAR\n3. Contar requests por dominio y endpoint\n4. Calcular mediana, p75, p95 y maximo\n5. Documentar variacion",
+      "expected": "La comparacion es reproducible y permite decidir si existe mejora de rendimiento.",
+      "type": "Positive",
+      "priority": "High",
+      "status": "Not Started"
+    },
+    {
+      "id": "PERF-02",
+      "scenario": "Comparar baseline y optimizada con cache",
+      "description": "Separar el comportamiento warm del comportamiento cold.",
+      "preconditions": "Primera captura completada; cache habilitada y condiciones registradas.",
+      "steps": "1. Recargar la home\n2. Capturar HAR warm\n3. Comparar con warm baseline equivalente\n4. Revisar duplicados y recursos cacheados",
+      "expected": "Los resultados warm se reportan separadamente y no se mezclan con carga fria.",
+      "type": "Edge Case",
+      "priority": "Medium",
+      "status": "Not Started"
+    },
+    {
+      "id": "NEG-01",
+      "scenario": "Bloquear Retail Rocket",
+      "description": "Verificar continuidad de la home ante falla del servicio externo.",
+      "preconditions": "DevTools con bloqueo de dominios Retail Rocket.",
+      "steps": "1. Bloquear dominios Retail Rocket\n2. Cargar home\n3. Navegar por contenido no dependiente del servicio",
+      "expected": "La home no queda bloqueada ni presenta error JavaScript critico; el resto del contenido funciona.",
+      "type": "Negative",
+      "priority": "High",
+      "status": "Not Started"
+    }
+  ],
+  "regression_tests": [
+    {
+      "id": "REG-01",
+      "scenario": "Usuario con producto en carro",
+      "description": "Confirmar que la optimizacion no altera el carro ni el contexto de la home.",
+      "preconditions": "Usuario invitado o autenticado con un producto en carro.",
+      "steps": "1. Agregar producto al carro\n2. Volver a la home\n3. Cargar e interactuar con carruseles\n4. Abrir carro",
+      "expected": "Carruseles funcionan y el producto, cantidad y subtotal del carro se mantienen.",
+      "type": "Regression",
+      "priority": "High",
+      "status": "Not Started"
+    },
+    {
+      "id": "REG-02",
+      "scenario": "Home con navegacion previa",
+      "description": "Verificar que cache y navegacion no dupliquen bloques o solicitudes incorrectas.",
+      "preconditions": "Sesion con navegacion previa a PDP o categoria.",
+      "steps": "1. Visitar PDP o categoria\n2. Volver a home\n3. Revisar carruseles, contenido y Network",
+      "expected": "No aparecen duplicados ni contenido inconsistente y la home sigue usable.",
+      "type": "Edge Case",
+      "priority": "High",
+      "status": "Not Started"
+    },
+    {
+      "id": "REG-03",
+      "scenario": "Smoke de bloques originales en certificacion",
+      "description": "Validar el comportamiento vigente antes de aplicar cambios productivos.",
+      "preconditions": "Bloques originales habilitados en certificacion.",
+      "steps": "1. Cargar home\n2. Verificar productos, imagenes y CTA\n3. Navegar con flechas\n4. Abrir un producto",
+      "expected": "El comportamiento original queda documentado como comparacion funcional.",
+      "type": "Regression",
+      "priority": "High",
+      "status": "Not Started"
+    },
+    {
+      "id": "REG-04",
+      "scenario": "Respuesta vacia o timeout",
+      "description": "Verificar fallback ante respuesta lenta o vacia del endpoint.",
+      "preconditions": "DevTools para simular throttling o respuesta vacia.",
+      "steps": "1. Aplicar throttling o bloquear la respuesta\n2. Cargar home\n3. Desplazar hasta el bloque afectado\n4. Revisar consola y resto de pagina",
+      "expected": "No se bloquea la pagina ni se genera error JavaScript critico; el fallo queda aislado.",
+      "type": "Negative",
+      "priority": "High",
+      "status": "Not Started"
+    },
+    {
+      "id": "REG-05",
+      "scenario": "Desktop y mobile",
+      "description": "Cubrir compatibilidad responsive de carruseles optimizados.",
+      "preconditions": "Chrome y Safari disponibles; viewport desktop y mobile.",
+      "steps": "1. Ejecutar smoke en desktop\n2. Ejecutar smoke en mobile\n3. Comparar layout, flechas, swipe e imagenes",
+      "expected": "No hay desbordes, contenido cortado ni controles inutilizables.",
+      "type": "Regression",
+      "priority": "High",
+      "status": "Not Started"
+    },
+    {
+      "id": "REG-06",
+      "scenario": "Bloques originales despues de aplicacion",
+      "description": "Repetir smoke y rendimiento si Loadstone pasa los cambios a originales.",
+      "preconditions": "Loadstone confirma aplicacion en bloques originales y entrega ventana de prueba.",
+      "steps": "1. Ejecutar carga fria y warm\n2. Ejecutar navegacion de carruseles\n3. Agregar producto al carro\n4. Exportar HAR y evidencias",
+      "expected": "Se conserva funcionalidad y la medicion es comparable con la baseline; cualquier diferencia queda explicada.",
+      "type": "Regression",
+      "priority": "High",
+      "status": "Not Started"
+    }
+  ],
+  "detailed_cases": {
+    "Positive Cases": [
+      {
+        "scenario": "Lazy load inicializa el bloque al entrar al viewport",
+        "steps": "Cargar sin scroll, registrar Network, desplazar hasta el bloque y esperar inicializacion.",
+        "expected": "No hay request prematura y el bloque se muestra completo al ser necesario."
+      },
+      {
+        "scenario": "Comparacion de rendimiento reproducible",
+        "steps": "Repetir baseline y optimizada con misma configuracion y calcular mediana, p75, p95 y maximo.",
+        "expected": "Existe una tabla de variacion por dominio y endpoint con archivos HAR trazables."
+      }
+    ],
+    "Negative Cases": [
+      {
+        "scenario": "Retail Rocket bloqueado",
+        "steps": "Bloquear dominios externos y cargar la home.",
+        "expected": "El resto de la home permanece usable y no aparece error JS critico."
+      },
+      {
+        "scenario": "Endpoint lento o vacio",
+        "steps": "Aplicar throttling o bloquear una respuesta y navegar al bloque.",
+        "expected": "El fallo queda aislado y la pagina no se bloquea."
+      }
+    ],
+    "Edge Cases": [
+      {
+        "scenario": "Sesiones con cache y navegacion previa",
+        "steps": "Visitar PDP/categoria, volver a home y capturar comportamiento warm.",
+        "expected": "No hay duplicados ni contenido inconsistente."
+      },
+      {
+        "scenario": "data-product-id y producto en carro",
+        "steps": "Interactuar con bloque configurado y luego revisar carro.",
+        "expected": "Producto recomendado y estado del carro permanecen correctos."
+      }
+    ]
+  }
+}

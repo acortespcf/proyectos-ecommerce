@@ -7,3 +7,4 @@
 .aider/
 skills-lock.json
 .obsidian/workspace.json
+*.tar.gz
